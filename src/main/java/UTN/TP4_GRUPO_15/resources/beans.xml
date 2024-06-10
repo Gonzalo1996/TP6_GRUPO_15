@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="beanUsuario" class="UTN.TP4_GRUPO_15.entidad.Usuario" scope="singleton">
+		<!--  <property name="usuario" value="pepe"></property>
+		<property name="contrasenia" value="1111111"></property>-->	
+		
+	</bean>
+    
+    <bean id="beanEspecie" class="UTN.TP4_GRUPO_15.entidad.Especialidad" >
+		<!--<property name="id" value="xxxx"></property>
+		<property name="nombre" value="0000"></property>-->	
+	</bean>
+    
+    <bean id="beanMedico" class="UTN.TP4_GRUPO_15.entidad.Medico" scope="singleton">
+		<!--  <property name="nombre" ref="beanDaoUsuario"></property>
+		<property name="apellido" ref="beanDaoUsuario"></property>
+		<property name="genero" ref="beanDaoUsuario"></property>
+		<property name="nac" ref="beanDaoUsuario"></property>
+		<property name="correo" ref="beanDaoUsuario"></property>
+		<property name="direccion" ref="beanDaoUsuario"></property>
+		<property name="localidad" ref="beanDaoUsuario"></property>
+		<property name="telefono" ref="beanDaoUsuario"></property>
+		
+		<property name="usuario" ref="beanUsuario"></property>
+		<property name="id_especialidad" ref="beanEspecie"></property>-->
+	</bean>
+	
+	 	
+	<bean id="beanPaciente" class="UTN.TP4_GRUPO_15.entidad.Paciente" scope="singleton">
+	
+	</bean>
+	
+	<bean id="beanTurno" class="UTN.TP4_GRUPO_15.entidad.Turno">
+	
+	</bean>
+	
+	
+	
+	<bean id="beanControladorMedico" class="UTN.TP4_GRUPO_15.controllers.medicoController">
+	
+	</bean>
+	
+	
+	
+	
+</beans>
