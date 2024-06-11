@@ -18,11 +18,14 @@ public class Usuario implements Serializable{
 	private String usuario;
 	@Column
 	private String contrasenia;
+	@Column
+	private boolean activo;
 	
-	public Usuario(String usuario, String contrasenia) {
+	public Usuario(String usuario, String contrasenia, boolean activo) {
 		super();
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
+		this.activo = activo;
 	}
 
 	public Usuario() {
@@ -43,6 +46,16 @@ public class Usuario implements Serializable{
 
 	public void setContrasenia(String contrasenia) {
 		this.contrasenia = contrasenia;
+	}
+
+	
+	
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 
 	@Override

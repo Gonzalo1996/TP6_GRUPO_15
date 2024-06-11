@@ -60,6 +60,9 @@ public class Medico implements Serializable{
 	@JoinColumn(name="id_especialidad")
 	private Especialidad especialidad;
 	
+	@Column(name="activo")
+	private boolean activo;
+	
 	/**
 	 * Constructores
 	**/
@@ -69,7 +72,7 @@ public class Medico implements Serializable{
 	}
 	
 	public Medico(int legajo, String nombre, String apellido, String genero, String nac, String correo,
-			String direccion, String localidad, String telefono, Usuario usuario, Especialidad especialidad) {
+			String direccion, String localidad, String telefono, Usuario usuario, Especialidad especialidad, boolean activo) {
 		super();
 		this.legajo = legajo;
 		this.nombre = nombre;
@@ -82,14 +85,25 @@ public class Medico implements Serializable{
 		this.telefono = telefono;
 		this.usuario = usuario;
 		this.especialidad = especialidad;
+		this.activo = activo;
 	}
 
 	/**
 	 * Getters and Setters
 	**/
 	
+	
+	
 	public Usuario getUsuario() {
 		return usuario;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 
 	public void setUsuario(Usuario usuario) {

@@ -60,16 +60,16 @@ public class App
     		
     		
     		//Creación de usuarios
-    		Usuario usuario1 = new Usuario("UserGonzalo", "123");
-    		Usuario usuario2 = new Usuario("UserGaston", "123");
-    		Usuario usuario3 = new Usuario("UserLeonel", "123");
-    		Usuario usuario4 = new Usuario("UserGuido", "123");
-    		Usuario usuario5 = new Usuario("UserWalter", "123");
-    		Usuario usuario6 = new Usuario("UserTamara", "123");
-    		Usuario usuario7 = new Usuario("UserPepito", "123");
-    		Usuario usuario8 = new Usuario("UserPepita", "123");
-    		Usuario usuario9 = new Usuario("UserJuan", "123");
-    		Usuario usuario10 = new Usuario("UserLaura", "123");
+    		Usuario usuario1 = new Usuario("UserGonzalo", "123", true);
+    		Usuario usuario2 = new Usuario("UserGaston", "123", true);
+    		Usuario usuario3 = new Usuario("UserLeonel", "123", true);
+    		Usuario usuario4 = new Usuario("UserGuido", "123", true);
+    		Usuario usuario5 = new Usuario("UserWalter", "123", true);
+    		Usuario usuario6 = new Usuario("UserTamara", "123", true);
+    		Usuario usuario7 = new Usuario("UserPepito", "123", true);
+    		Usuario usuario8 = new Usuario("UserPepita", "123", true);
+    		Usuario usuario9 = new Usuario("UserJuan", "123", true);
+    		Usuario usuario10 = new Usuario("UserLaura", "123", true);
     		
     		System.out.println(new usuarioNegocio().create(usuario1));
     		System.out.println(new usuarioNegocio().create(usuario2));
@@ -84,9 +84,9 @@ public class App
     		
     		//Creación de especialidades
     		
-    		Especialidad especialidad1 = new Especialidad("Clinico");
-    		Especialidad especialidad2 = new Especialidad("Cardiologo");
-    		Especialidad especialidad3 = new Especialidad("Nefrologo");
+    		Especialidad especialidad1 = new Especialidad("Clinico", true);
+    		Especialidad especialidad2 = new Especialidad("Cardiologo", true);
+    		Especialidad especialidad3 = new Especialidad("Nefrologo", true);
     		
     		System.out.println(new especialidadNegocio().create(especialidad1));
     		System.out.println(new especialidadNegocio().create(especialidad2));
@@ -94,16 +94,16 @@ public class App
 
 
     		//Creación de medicos
-    		Medico medico01 = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario1, especialidad1);
-    		Medico medico02 = new Medico(1111, "Gaston", "Argañaz", "Masculino", "01/06/1996", "gaston@prueba.com", "falsa 222", "Pacheco", "11-12229", usuario2, especialidad1);
-    		Medico medico03 = new Medico(2222, "Leonel", "Herrera", "Masculino", "30/12/2000", "leonel@prueba.com", "falsa 333", "Pacheco", "11-12229", usuario3, especialidad1);
-    		Medico medico04 = new Medico(3333, "Guido", "Romero", "Masculino", "11/02/2001", "guido@prueba.com", "falsa 444", "Pacheco", "11-12229", usuario4, especialidad2);
-    		Medico medico05 = new Medico(4444, "Walter", "Pizzo", "Masculino", "29/02/1998", "walter@prueba.com", "falsa 555", "Pacheco", "11-12229", usuario5, especialidad3);
-    		Medico medico06 = new Medico(5555, "Tamara", "Herrera", "Femenina", "14/05/2000", "tamara@prueba.com", "falsa 666", "Pacheco", "11-12229", usuario6, especialidad3);
-    		Medico medico07 = new Medico(6666, "Pepito", "Perez", "Masculino", "12/02/1996", "pepito@prueba.com", "falsa 777", "Pacheco", "11-12229", usuario7, especialidad2);
-    		Medico medico08 = new Medico(7777, "Pepita", "Perez", "Femenina", "04/04/1999", "pepita@prueba.com", "falsa 888", "Pacheco", "11-12229", usuario8, especialidad1);
-    		Medico medico09 = new Medico(8888, "Juan", "Diaz", "Masculino", "12/02/1996", "juan@prueba.com", "falsa 999", "Pacheco", "11-12229", usuario9, especialidad1);
-    		Medico medico10 = new Medico(9999, "Laura", "Morales", "Femenina", "02/12/2000", "laura@prueba.com", "falsa 321", "Pacheco", "11-12229", usuario10, especialidad3);
+    		Medico medico01 = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario1, especialidad1, true);
+    		Medico medico02 = new Medico(1111, "Gaston", "Argañaz", "Masculino", "01/06/1996", "gaston@prueba.com", "falsa 222", "Pacheco", "11-12229", usuario2, especialidad1, true);
+    		Medico medico03 = new Medico(2222, "Leonel", "Herrera", "Masculino", "30/12/2000", "leonel@prueba.com", "falsa 333", "Pacheco", "11-12229", usuario3, especialidad1, true);
+    		Medico medico04 = new Medico(3333, "Guido", "Romero", "Masculino", "11/02/2001", "guido@prueba.com", "falsa 444", "Pacheco", "11-12229", usuario4, especialidad2, true);
+    		Medico medico05 = new Medico(4444, "Walter", "Pizzo", "Masculino", "29/02/1998", "walter@prueba.com", "falsa 555", "Pacheco", "11-12229", usuario5, especialidad3, true);
+    		Medico medico06 = new Medico(5555, "Tamara", "Herrera", "Femenina", "14/05/2000", "tamara@prueba.com", "falsa 666", "Pacheco", "11-12229", usuario6, especialidad3, true);
+    		Medico medico07 = new Medico(6666, "Pepito", "Perez", "Masculino", "12/02/1996", "pepito@prueba.com", "falsa 777", "Pacheco", "11-12229", usuario7, especialidad2, true);
+    		Medico medico08 = new Medico(7777, "Pepita", "Perez", "Femenina", "04/04/1999", "pepita@prueba.com", "falsa 888", "Pacheco", "11-12229", usuario8, especialidad1, true);
+    		Medico medico09 = new Medico(8888, "Juan", "Diaz", "Masculino", "12/02/1996", "juan@prueba.com", "falsa 999", "Pacheco", "11-12229", usuario9, especialidad1, true);
+    		Medico medico10 = new Medico(9999, "Laura", "Morales", "Femenina", "02/12/2000", "laura@prueba.com", "falsa 321", "Pacheco", "11-12229", usuario10, especialidad3, true);
 
     		System.out.println(new medicoNegocio().create(medico01));
     		System.out.println(new medicoNegocio().create(medico02));
@@ -118,32 +118,32 @@ public class App
     		
     		
     		// Creación de pacientes
-    		Paciente paciente1 = new Paciente("María", "González", "123456789", "1234567890", "Calle Falsa 123", "Ciudad", "Provincia", LocalDate.of(1980, 5, 15), "maria@example.com");
-    		Paciente paciente2 = new Paciente("Juan", "Martínez", "987654321", "0987654321", "Av. Libertador 456", "Otra Ciudad", "Otra Provincia", LocalDate.of(1975, 10, 8), "juan@example.com");
-    		Paciente paciente3 = new Paciente("Luis", "López", "456789123", "0123456789", "Av. Rivadavia 789", "Otra Ciudad", "Otra Provincia", LocalDate.of(1990, 12, 20), "luis@example.com");
-    		Paciente paciente4 = new Paciente("Ana", "Rodríguez", "789123456", "6789012345", "Av. Belgrano 101", "Otra Ciudad", "Otra Provincia", LocalDate.of(1985, 7, 3), "ana@example.com");
-    		Paciente paciente5 = new Paciente("Carlos", "Sánchez", "321654987", "5432109876", "Calle Principal 555", "Otra Ciudad", "Otra Provincia", LocalDate.of(1970, 3, 28), "carlos@example.com");
-    		Paciente paciente6 = new Paciente("Laura", "Díaz", "654987321", "9876543210", "Av. Corrientes 222", "Otra Ciudad", "Otra Provincia", LocalDate.of(1982, 8, 12), "laura@example.com");
-    		Paciente paciente7 = new Paciente("José", "Gómez", "159753468", "1597534680", "Av. San Martín 333", "Otra Ciudad", "Otra Provincia", LocalDate.of(1978, 6, 5), "jose@example.com");
-    		Paciente paciente8 = new Paciente("Lucía", "Pérez", "753951852", "7539518520", "Av. Santa Fe 777", "Otra Ciudad", "Otra Provincia", LocalDate.of(1995, 9, 17), "lucia@example.com");
-    		Paciente paciente9 = new Paciente("Pedro", "Fernández", "258369147", "2583691470", "Calle Mayor 999", "Otra Ciudad", "Otra Provincia", LocalDate.of(1987, 2, 9), "pedro@example.com");
-    		Paciente paciente10 = new Paciente("Sofía", "Álvarez", "147258369", "1472583690", "Av. 9 de Julio 666", "Otra Ciudad", "Otra Provincia", LocalDate.of(1993, 11, 30), "sofia@example.com");
+    		Paciente paciente1 = new Paciente("María", "González", "123456789", "1234567890", "Calle Falsa 123", "Ciudad", "Provincia", LocalDate.of(1980, 5, 15), "maria@example.com", true);
+    		Paciente paciente2 = new Paciente("Juan", "Martínez", "987654321", "0987654321", "Av. Libertador 456", "Otra Ciudad", "Otra Provincia", LocalDate.of(1975, 10, 8), "juan@example.com", true);
+    		Paciente paciente3 = new Paciente("Luis", "López", "456789123", "0123456789", "Av. Rivadavia 789", "Otra Ciudad", "Otra Provincia", LocalDate.of(1990, 12, 20), "luis@example.com", true);
+    		Paciente paciente4 = new Paciente("Ana", "Rodríguez", "789123456", "6789012345", "Av. Belgrano 101", "Otra Ciudad", "Otra Provincia", LocalDate.of(1985, 7, 3), "ana@example.com",true);
+    		Paciente paciente5 = new Paciente("Carlos", "Sánchez", "321654987", "5432109876", "Calle Principal 555", "Otra Ciudad", "Otra Provincia", LocalDate.of(1970, 3, 28), "carlos@example.com", true);
+    		Paciente paciente6 = new Paciente("Laura", "Díaz", "654987321", "9876543210", "Av. Corrientes 222", "Otra Ciudad", "Otra Provincia", LocalDate.of(1982, 8, 12), "laura@example.com", true);
+    		Paciente paciente7 = new Paciente("José", "Gómez", "159753468", "1597534680", "Av. San Martín 333", "Otra Ciudad", "Otra Provincia", LocalDate.of(1978, 6, 5), "jose@example.com", true);
+    		Paciente paciente8 = new Paciente("Lucía", "Pérez", "753951852", "7539518520", "Av. Santa Fe 777", "Otra Ciudad", "Otra Provincia", LocalDate.of(1995, 9, 17), "lucia@example.com", true);
+    		Paciente paciente9 = new Paciente("Pedro", "Fernández", "258369147", "2583691470", "Calle Mayor 999", "Otra Ciudad", "Otra Provincia", LocalDate.of(1987, 2, 9), "pedro@example.com", true);
+    		Paciente paciente10 = new Paciente("Sofía", "Álvarez", "147258369", "1472583690", "Av. 9 de Julio 666", "Otra Ciudad", "Otra Provincia", LocalDate.of(1993, 11, 30), "sofia@example.com", true);
 
     		
     		
     		// Creación de turnos
     		
     		
-    		Turno turno1 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 11), LocalTime.of(14, 01), "observación1", "presente");
-    		Turno turno2 = new Turno(medico01, paciente2, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación2", "ausente");
-    		Turno turno3 = new Turno(medico01, paciente3, LocalDate.of(2024, 02, 12), LocalTime.of(14, 01), "observación3", "ausente");
-    		Turno turno4 = new Turno(medico01, paciente4, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación4", "ausente");
-    		Turno turno5 = new Turno(medico05, paciente5, LocalDate.of(2024, 02, 13), LocalTime.of(14, 01), "observación5", "presente");
-    		Turno turno6 = new Turno(medico06, paciente6, LocalDate.of(2024, 01, 13), LocalTime.of(14, 01), "observación6", "presente");
-    		Turno turno7 = new Turno(medico07, paciente7, LocalDate.of(2024, 02, 14), LocalTime.of(14, 01), "observación7", "presente");
-    		Turno turno8 = new Turno(medico08, paciente8, LocalDate.of(2024, 01, 14), LocalTime.of(14, 01), "observación8", "presente");
-    		Turno turno9 = new Turno(medico09, paciente9, LocalDate.of(2024, 04, 15), LocalTime.of(14, 01), "observación9", "ausente");
-    		Turno turno10 = new Turno(medico10, paciente10, LocalDate.of(2024, 01, 15), LocalTime.of(14, 01), "observación10", "presente");
+    		Turno turno1 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 11), LocalTime.of(14, 01), "observación1", "presente", true);
+    		Turno turno2 = new Turno(medico01, paciente2, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación2", "ausente", true);
+    		Turno turno3 = new Turno(medico01, paciente3, LocalDate.of(2024, 02, 12), LocalTime.of(14, 01), "observación3", "ausente", true);
+    		Turno turno4 = new Turno(medico01, paciente4, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación4", "ausente", true);
+    		Turno turno5 = new Turno(medico05, paciente5, LocalDate.of(2024, 02, 13), LocalTime.of(14, 01), "observación5", "presente", true);
+    		Turno turno6 = new Turno(medico06, paciente6, LocalDate.of(2024, 01, 13), LocalTime.of(14, 01), "observación6", "presente", true);
+    		Turno turno7 = new Turno(medico07, paciente7, LocalDate.of(2024, 02, 14), LocalTime.of(14, 01), "observación7", "presente", true);
+    		Turno turno8 = new Turno(medico08, paciente8, LocalDate.of(2024, 01, 14), LocalTime.of(14, 01), "observación8", "presente", true);
+    		Turno turno9 = new Turno(medico09, paciente9, LocalDate.of(2024, 04, 15), LocalTime.of(14, 01), "observación9", "ausente", true);
+    		Turno turno10 = new Turno(medico10, paciente10, LocalDate.of(2024, 01, 15), LocalTime.of(14, 01), "observación10", "presente", true);
 
     		
     		
@@ -179,9 +179,9 @@ public class App
     		break;
     		
     	case 2:
-    		Usuario usuario11 = new Usuario("Gonzalo", "123");
-    		Especialidad especialidad4 = new Especialidad("Clinico");
-    		Medico medicoUpdate = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario11, especialidad4);
+    		Usuario usuario11 = new Usuario("Gonzalo", "123", true);
+    		Especialidad especialidad4 = new Especialidad("Clinico", true);
+    		Medico medicoUpdate = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario11, especialidad4, true);
     		medicoUpdate.setLegajo(1);
     		String updateMedcio = new medicoNegocio().update(medicoUpdate);
     		

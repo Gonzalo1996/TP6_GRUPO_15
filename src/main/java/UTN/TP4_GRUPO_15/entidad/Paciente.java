@@ -42,13 +42,16 @@ public class Paciente implements Serializable{
 	@Column
 	private String Correo;
 	
+	@Column
+	private boolean activo;
+	
 
 	public Paciente() {
 		super();
 	}
 
 	public Paciente(String nombre, String apellido, String dni, String telefono, String direccion, String localidad,
-			String provincia, LocalDate fechaNacimiento, String correo) {
+			String provincia, LocalDate fechaNacimiento, String correo, boolean activo) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -58,7 +61,8 @@ public class Paciente implements Serializable{
 		this.localidad = localidad;
 		this.provincia = provincia;
 		this.fechaNacimiento = fechaNacimiento;
-		Correo = correo;
+		this.Correo = correo;
+		this.activo = activo;
 	}
 
 	public String getNombre() {

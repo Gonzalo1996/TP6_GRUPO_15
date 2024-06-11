@@ -17,6 +17,7 @@ public class Especialidad implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String nombre;
+	private boolean activo;
 	
 	
 	public Especialidad() {
@@ -24,9 +25,10 @@ public class Especialidad implements Serializable {
 	}
 
 
-	public Especialidad(String nombre) {
+	public Especialidad(String nombre, boolean activo) {
 		super();
 		this.nombre = nombre;
+		this.activo = activo;
 	}
 
 	public int getId() {
@@ -46,6 +48,17 @@ public class Especialidad implements Serializable {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 
 

@@ -48,11 +48,14 @@ public class Turno implements Serializable{
 	@Column(name="estado")
 	private String estado;
 	
+	@Column(name="activo")
+	private boolean activo;
+	
 	
 	public Turno() {
 		
 	}
-	public Turno(Medico medico, Paciente paciente, LocalDate fecha, LocalTime hora, String observacion, String estado) {
+	public Turno(Medico medico, Paciente paciente, LocalDate fecha, LocalTime hora, String observacion, String estado, boolean activo) {
 		
 		this.medico = medico;
 		this.paciente = paciente;
@@ -60,6 +63,7 @@ public class Turno implements Serializable{
 		this.hora = hora;
 		this.observacion = observacion;
 		this.estado = estado;
+		this.activo = activo;
 	}
 	
 	
@@ -67,6 +71,12 @@ public class Turno implements Serializable{
 	
 	
 	
+	public boolean isActivo() {
+		return activo;
+	}
+	public void setActivo(boolean activo) {
+		this.activo = activo;
+	}
 	public Medico getMedico() {
 		return medico;
 	}
