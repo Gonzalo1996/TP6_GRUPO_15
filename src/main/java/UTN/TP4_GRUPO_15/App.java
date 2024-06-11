@@ -7,14 +7,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-import UTN.TP4_GRUPO_15.controllers.especialidadController;
-import UTN.TP4_GRUPO_15.controllers.medicoController;
-import UTN.TP4_GRUPO_15.controllers.turnoController;
-import UTN.TP4_GRUPO_15.controllers.usuarioController;
 import UTN.TP4_GRUPO_15.entidad.Especialidad;
 import UTN.TP4_GRUPO_15.entidad.Medico;
 import UTN.TP4_GRUPO_15.entidad.Paciente;
 import UTN.TP4_GRUPO_15.entidad.Usuario;
+import UTN.TP4_GRUPO_15.negocio.especialidadNegocio;
+import UTN.TP4_GRUPO_15.negocio.medicoNegocio;
+import UTN.TP4_GRUPO_15.negocio.turnoNegocio;
+import UTN.TP4_GRUPO_15.negocio.usuarioNegocio;
 import UTN.TP4_GRUPO_15.entidad.Turno;
 
 import org.springframework.context.ApplicationContext;
@@ -71,16 +71,16 @@ public class App
     		Usuario usuario9 = new Usuario("UserJuan", "123");
     		Usuario usuario10 = new Usuario("UserLaura", "123");
     		
-    		System.out.println(new usuarioController().create(usuario1));
-    		System.out.println(new usuarioController().create(usuario2));
-    		System.out.println(new usuarioController().create(usuario3));
-    		System.out.println(new usuarioController().create(usuario4));
-    		System.out.println(new usuarioController().create(usuario5));
-    		System.out.println(new usuarioController().create(usuario6));
-    		System.out.println(new usuarioController().create(usuario7));
-    		System.out.println(new usuarioController().create(usuario8));
-    		System.out.println(new usuarioController().create(usuario9));
-    		System.out.println(new usuarioController().create(usuario10));
+    		System.out.println(new usuarioNegocio().create(usuario1));
+    		System.out.println(new usuarioNegocio().create(usuario2));
+    		System.out.println(new usuarioNegocio().create(usuario3));
+    		System.out.println(new usuarioNegocio().create(usuario4));
+    		System.out.println(new usuarioNegocio().create(usuario5));
+    		System.out.println(new usuarioNegocio().create(usuario6));
+    		System.out.println(new usuarioNegocio().create(usuario7));
+    		System.out.println(new usuarioNegocio().create(usuario8));
+    		System.out.println(new usuarioNegocio().create(usuario9));
+    		System.out.println(new usuarioNegocio().create(usuario10));
     		
     		//Creación de especialidades
     		
@@ -88,9 +88,9 @@ public class App
     		Especialidad especialidad2 = new Especialidad("Cardiologo");
     		Especialidad especialidad3 = new Especialidad("Nefrologo");
     		
-    		System.out.println(new especialidadController().create(especialidad1));
-    		System.out.println(new especialidadController().create(especialidad2));
-    		System.out.println(new especialidadController().create(especialidad3));
+    		System.out.println(new especialidadNegocio().create(especialidad1));
+    		System.out.println(new especialidadNegocio().create(especialidad2));
+    		System.out.println(new especialidadNegocio().create(especialidad3));
 
 
     		//Creación de medicos
@@ -105,16 +105,16 @@ public class App
     		Medico medico09 = new Medico(8888, "Juan", "Diaz", "Masculino", "12/02/1996", "juan@prueba.com", "falsa 999", "Pacheco", "11-12229", usuario9, especialidad1);
     		Medico medico10 = new Medico(9999, "Laura", "Morales", "Femenina", "02/12/2000", "laura@prueba.com", "falsa 321", "Pacheco", "11-12229", usuario10, especialidad3);
 
-    		System.out.println(new medicoController().create(medico01));
-    		System.out.println(new medicoController().create(medico02));
-    		System.out.println(new medicoController().create(medico03));
-    		System.out.println(new medicoController().create(medico04));
-    		System.out.println(new medicoController().create(medico05));
-    		System.out.println(new medicoController().create(medico06));
-    		System.out.println(new medicoController().create(medico07));
-    		System.out.println(new medicoController().create(medico08));
-    		System.out.println(new medicoController().create(medico09));
-    		System.out.println(new medicoController().create(medico10));
+    		System.out.println(new medicoNegocio().create(medico01));
+    		System.out.println(new medicoNegocio().create(medico02));
+    		System.out.println(new medicoNegocio().create(medico03));
+    		System.out.println(new medicoNegocio().create(medico04));
+    		System.out.println(new medicoNegocio().create(medico05));
+    		System.out.println(new medicoNegocio().create(medico06));
+    		System.out.println(new medicoNegocio().create(medico07));
+    		System.out.println(new medicoNegocio().create(medico08));
+    		System.out.println(new medicoNegocio().create(medico09));
+    		System.out.println(new medicoNegocio().create(medico10));
     		
     		
     		// Creación de pacientes
@@ -133,7 +133,7 @@ public class App
     		
     		// Creación de turnos
     		
-    		/*
+    		
     		Turno turno1 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 11), LocalTime.of(14, 01), "observación1", "presente");
     		Turno turno2 = new Turno(medico01, paciente2, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación2", "ausente");
     		Turno turno3 = new Turno(medico01, paciente3, LocalDate.of(2024, 02, 12), LocalTime.of(14, 01), "observación3", "ausente");
@@ -145,9 +145,10 @@ public class App
     		Turno turno9 = new Turno(medico09, paciente9, LocalDate.of(2024, 04, 15), LocalTime.of(14, 01), "observación9", "ausente");
     		Turno turno10 = new Turno(medico10, paciente10, LocalDate.of(2024, 01, 15), LocalTime.of(14, 01), "observación10", "presente");
 
-    		*/
     		
     		
+    		
+    		/*
     		Turno turno1 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 11), "14:00", "observación1", "presente");
     		Turno turno2 = new Turno(medico01, paciente2, LocalDate.of(2024, 01, 01), "14:00", "observación2", "ausente");
     		Turno turno3 = new Turno(medico01, paciente3, LocalDate.of(2024, 02, 12), "14:00", "observación3", "ausente");
@@ -158,22 +159,22 @@ public class App
     		Turno turno8 = new Turno(medico08, paciente8, LocalDate.of(2024, 01, 14), "14:00", "observación8", "presente");
     		Turno turno9 = new Turno(medico09, paciente9, LocalDate.of(2024, 04, 15), "14:00", "observación9", "ausente");
     		Turno turno10 = new Turno(medico10, paciente10, LocalDate.of(2024, 01, 15), "14:00", "observación10", "presente");
+    		*/
+   
     		
     		
     		
     		
-    		
-    		
-    		System.out.println(new turnoController().create(turno1));
-    		System.out.println(new turnoController().create(turno2));
-    		System.out.println(new turnoController().create(turno3));
-    		System.out.println(new turnoController().create(turno4));
-    		System.out.println(new turnoController().create(turno5));
-    		System.out.println(new turnoController().create(turno6));
-    		System.out.println(new turnoController().create(turno7));
-    		System.out.println(new turnoController().create(turno8));
-    		System.out.println(new turnoController().create(turno9));
-    		System.out.println(new turnoController().create(turno10));
+    		System.out.println(new turnoNegocio().create(turno1));
+    		System.out.println(new turnoNegocio().create(turno2));
+    		System.out.println(new turnoNegocio().create(turno3));
+    		System.out.println(new turnoNegocio().create(turno4));
+    		System.out.println(new turnoNegocio().create(turno5));
+    		System.out.println(new turnoNegocio().create(turno6));
+    		System.out.println(new turnoNegocio().create(turno7));
+    		System.out.println(new turnoNegocio().create(turno8));
+    		System.out.println(new turnoNegocio().create(turno9));
+    		System.out.println(new turnoNegocio().create(turno10));
     		
     		break;
     		
@@ -182,7 +183,7 @@ public class App
     		Especialidad especialidad4 = new Especialidad("Clinico");
     		Medico medicoUpdate = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario11, especialidad4);
     		medicoUpdate.setLegajo(1);
-    		String updateMedcio = new medicoController().update(medicoUpdate);
+    		String updateMedcio = new medicoNegocio().update(medicoUpdate);
     		
     		System.out.println(updateMedcio);
     		break;
@@ -195,8 +196,8 @@ public class App
     		medicoDelete.delete(9);
     		*/
     		
-    		especialidadController especialidad = new especialidadController();
-    		especialidad.delete(5);
+    		especialidadNegocio especialidadNeg = new especialidadNegocio();
+    		especialidadNeg.delete(5);
     		
     		break;
     		
@@ -205,7 +206,7 @@ public class App
     	case 4:
     		System.out.println( "Listado de médicos: " );
 
-    		List<Medico> listMedicos = new medicoController().listMedicos();
+    		List<Medico> listMedicos = new medicoNegocio().listMedicos();
     		
     		for (Medico medico : listMedicos) {
     		    System.out.println(medico);
@@ -213,24 +214,24 @@ public class App
     		break;
     		
     	case 5:
-    		new medicoController().listMedicsAscending();
+    		new medicoNegocio().listMedicsAscending();
     		break;
     		
     	case 6:
-    		new medicoController().listMedicsDescending();
+    		new medicoNegocio().listMedicsDescending();
     		break;
     		
     	case 7:
-			new turnoController().listTurnosInnerJoin();
+			new turnoNegocio().listTurnosInnerJoin();
     		break;
     	case 8:
-    		new medicoController().listMedicsIds();
+    		new medicoNegocio().listMedicsIds();
     		break;
     	case 9:
-    		new medicoController().listMedicWithHighestId();
+    		new medicoNegocio().listMedicWithHighestId();
     		break;
     	case 10:
-        	new turnoController().listTurnStatusPercentages();
+        	new turnoNegocio().listTurnStatusPercentages();
     		break;
     		
     	case 11:

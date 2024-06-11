@@ -40,7 +40,7 @@ public class Turno implements Serializable{
 	private LocalDate fecha;
 	
 	@Column(name="hora")
-	private String hora;
+	private LocalTime hora;
 	
 	@Column(name="observaciones")
 	private String observacion;
@@ -52,7 +52,7 @@ public class Turno implements Serializable{
 	public Turno() {
 		
 	}
-	public Turno(Medico medico, Paciente paciente, LocalDate fecha, String hora, String observacion, String estado) {
+	public Turno(Medico medico, Paciente paciente, LocalDate fecha, LocalTime hora, String observacion, String estado) {
 		
 		this.medico = medico;
 		this.paciente = paciente;
@@ -93,10 +93,10 @@ public class Turno implements Serializable{
 	public void setFecha(LocalDate fecha) {
 		this.fecha = fecha;
 	}
-	public String getHora() {
+	public LocalTime getHora() {
 		return hora;
 	}
-	public void setHora(String hora) {
+	public void setHora(LocalTime hora) {
 		this.hora = hora;
 	}
 	public String getObservacion() {

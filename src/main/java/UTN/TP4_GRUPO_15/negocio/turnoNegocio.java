@@ -1,9 +1,26 @@
 package UTN.TP4_GRUPO_15.negocio;
 
+import java.util.List;
+
+import UTN.TP4_GRUPO_15.controllers.turnoController;
+import UTN.TP4_GRUPO_15.entidad.Turno;
+
 public class turnoNegocio {
+    private turnoController turnoController;
 
-	public turnoNegocio() {
-		// TODO Auto-generated constructor stub
-	}
+    public turnoNegocio() {
+        this.turnoController = new turnoController();
+    }
 
+    public String create(Turno turno) {
+        return turnoController.create(turno);
+    }
+
+    public void listTurnosInnerJoin() {
+        turnoController.listTurnosInnerJoin();
+    }
+
+    public void listTurnStatusPercentages() {
+        turnoController.listTurnStatusPercentages();
+    }
 }
