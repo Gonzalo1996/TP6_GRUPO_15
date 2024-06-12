@@ -1,11 +1,9 @@
 package UTN.TP4_GRUPO_15.controllers;
 
-import java.util.List;
 
 import org.hibernate.Session;
 
 import UTN.TP4_GRUPO_15.dao.ConfigHibernate;
-import UTN.TP4_GRUPO_15.entidad.Medico;
 import UTN.TP4_GRUPO_15.entidad.Usuario;
 
 public class usuarioController {

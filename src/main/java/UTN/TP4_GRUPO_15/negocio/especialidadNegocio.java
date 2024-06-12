@@ -21,4 +21,14 @@ public class especialidadNegocio {
     public String delete(int id) {
         return especialidadController.delete(id);
     }
+
+	public especialidadController getEspecialidadController() {
+		return especialidadController;
+	}
+
+	public void setEspecialidadController(especialidadController especialidadController) {
+		this.especialidadController = especialidadController;
+	}
+    
+    
 }

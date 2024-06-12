@@ -11,11 +11,22 @@
      http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-    <bean id="beanUsuario" class="UTN.TP4_GRUPO_15.entidad.Usuario" scope="singleton">
-		<!--  <property name="usuario" value="pepe"></property>
-		<property name="contrasenia" value="1111111"></property>-->	
-		
+    <bean id="beanUsuario" class="UTN.TP4_GRUPO_15.entidad.Usuario" scope="prototype">
 	</bean>
+    
+    <bean id="beanUsuarioController" class="UTN.TP4_GRUPO_15.controllers.usuarioController" scope="singleton">
+	</bean>
+    
+    <bean id="beanUsuarioNegocio" class="UTN.TP4_GRUPO_15.negocio.usuarioNegocio" scope="singleton">
+    		<property name="usuarioController" ref="beanUsuarioController"></property>
+	</bean>
+    
+    
+    
+    
+    
+    
+    
     
     <bean id="beanEspecie" class="UTN.TP4_GRUPO_15.entidad.Especialidad" >
 		<!--<property name="id" value="xxxx"></property>

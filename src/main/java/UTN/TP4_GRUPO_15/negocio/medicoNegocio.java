@@ -47,4 +47,14 @@ public class medicoNegocio {
     public void listMedicWithHighestId() {
         medicoController.listMedicWithHighestId();
     }
+
+	public medicoController getMedicoController() {
+		return medicoController;
+	}
+
+	public void setMedicoController(medicoController medicoController) {
+		this.medicoController = medicoController;
+	}
+    
+    
 }

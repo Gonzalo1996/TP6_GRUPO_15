@@ -23,4 +23,14 @@ public class turnoNegocio {
     public void listTurnStatusPercentages() {
         turnoController.listTurnStatusPercentages();
     }
+
+	public turnoController getTurnoController() {
+		return turnoController;
+	}
+
+	public void setTurnoController(turnoController turnoController) {
+		this.turnoController = turnoController;
+	}
+    
+    
 }

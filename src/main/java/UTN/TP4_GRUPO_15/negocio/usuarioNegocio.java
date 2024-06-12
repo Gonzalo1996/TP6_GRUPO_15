@@ -13,4 +13,12 @@ public class usuarioNegocio {
     public String create(Usuario usuario) {
         return usuarioController.create(usuario);
     }
+    
+    public usuarioController getUsuarioController() {
+		return usuarioController;
+	}
+	public void setUsuarioController(usuarioController usuarioController) {
+		this.usuarioController = usuarioController;
+	}
 }
+

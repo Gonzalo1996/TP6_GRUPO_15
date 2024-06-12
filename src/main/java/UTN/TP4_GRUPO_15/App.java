@@ -60,27 +60,63 @@ public class App
     		
     		
     		//Creación de usuarios
-    		Usuario usuario1 = new Usuario("UserGonzalo", "123", true);
-    		Usuario usuario2 = new Usuario("UserGaston", "123", true);
-    		Usuario usuario3 = new Usuario("UserLeonel", "123", true);
-    		Usuario usuario4 = new Usuario("UserGuido", "123", true);
-    		Usuario usuario5 = new Usuario("UserWalter", "123", true);
-    		Usuario usuario6 = new Usuario("UserTamara", "123", true);
-    		Usuario usuario7 = new Usuario("UserPepito", "123", true);
-    		Usuario usuario8 = new Usuario("UserPepita", "123", true);
-    		Usuario usuario9 = new Usuario("UserJuan", "123", true);
-    		Usuario usuario10 = new Usuario("UserLaura", "123", true);
+    		ApplicationContext appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		usuarioNegocio usuarioNegocio = (usuarioNegocio) appContext.getBean("beanUsuarioNegocio");
+
+    		Usuario usuario1 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario2 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario3 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario4 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario5 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario6 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario7 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario8 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario9 = (Usuario) appContext.getBean("beanUsuario");
+    		Usuario usuario10 = (Usuario) appContext.getBean("beanUsuario");
+
+    		usuario1.setUsuario("UserGonzalo");
+    		usuario1.setContrasenia("123");
+    		usuario1.setActivo(true);
+    		usuario2.setUsuario("UserGaston");
+    		usuario2.setContrasenia("123");
+    		usuario2.setActivo(true);
+    		usuario3.setUsuario("UserLeonel");
+    		usuario3.setContrasenia("123");
+    		usuario3.setActivo(true);	
+    		usuario4.setUsuario("UserLaura");
+    		usuario4.setContrasenia("123");
+    		usuario4.setActivo(true);
+    		usuario5.setUsuario("UserGuido");
+    		usuario5.setContrasenia("123");
+    		usuario5.setActivo(true);
+    		usuario6.setUsuario("UserWalter");
+    		usuario6.setContrasenia("123");
+    		usuario6.setActivo(true);
+    		usuario7.setUsuario("UserTamara");
+    		usuario7.setContrasenia("123");
+    		usuario7.setActivo(true);
+    		usuario8.setUsuario("UserPepito");
+    		usuario8.setContrasenia("123");
+    		usuario8.setActivo(true);
+    		usuario9.setUsuario("UserPepita");
+    		usuario9.setContrasenia("123");
+    		usuario9.setActivo(true);
+    		usuario10.setUsuario("UserJuan");
+    		usuario10.setContrasenia("123");
+    		usuario10.setActivo(true);
+
     		
-    		System.out.println(new usuarioNegocio().create(usuario1));
-    		System.out.println(new usuarioNegocio().create(usuario2));
-    		System.out.println(new usuarioNegocio().create(usuario3));
-    		System.out.println(new usuarioNegocio().create(usuario4));
-    		System.out.println(new usuarioNegocio().create(usuario5));
-    		System.out.println(new usuarioNegocio().create(usuario6));
-    		System.out.println(new usuarioNegocio().create(usuario7));
-    		System.out.println(new usuarioNegocio().create(usuario8));
-    		System.out.println(new usuarioNegocio().create(usuario9));
-    		System.out.println(new usuarioNegocio().create(usuario10));
+    		System.out.println(usuarioNegocio.create(usuario1));
+    		System.out.println(usuarioNegocio.create(usuario2));
+    		System.out.println(usuarioNegocio.create(usuario3));
+    		System.out.println(usuarioNegocio.create(usuario4));
+    		System.out.println(usuarioNegocio.create(usuario5));
+    		System.out.println(usuarioNegocio.create(usuario6));
+    		System.out.println(usuarioNegocio.create(usuario7));
+    		System.out.println(usuarioNegocio.create(usuario8));
+    		System.out.println(usuarioNegocio.create(usuario9));
+    		System.out.println(usuarioNegocio.create(usuario10));
+
     		
     		//Creación de especialidades
     		
