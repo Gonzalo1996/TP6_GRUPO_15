@@ -152,8 +152,8 @@ public class App
     		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		
     		Medico medico01 = (Medico)appContext.getBean("beanMedico");
-    		medico01.setUsuario(usuario1);
-    		medico01.setEspecialidad(especialidad1);
+    		//medico01.setUsuario(usuario1);
+    		//medico01.setEspecialidad(especialidad1);
     		
     		Medico medico02 = (Medico)appContext.getBean("beanMedico");
     		medico02.setLegajo(1111);
@@ -167,6 +167,8 @@ public class App
     		medico02.setTelefono("11-12229");
     		medico02.setUsuario(usuario2);
     		medico02.setEspecialidad(especialidad2);
+    		medico02.setDiasAtencion("Lunes,Martes");
+    		medico02.setHorariosAtencion("16:00-21:00");
     		
     		System.out.println(new medicoNegocio().create(medico01));
     		System.out.println(new medicoNegocio().create(medico02));
@@ -261,7 +263,7 @@ public class App
     	case 2:
     		Usuario usuario11 = new Usuario("Gonzalo", "123", true);
     		Especialidad especialidad4 = new Especialidad("Clinico", true);
-    		Medico medicoUpdate = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario11, especialidad4, true);
+    		Medico medicoUpdate = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario11, especialidad4, true, "Lunes,Martes", "18:00-23:00");
     		medicoUpdate.setLegajo(1);
     		String updateMedcio = new medicoNegocio().update(medicoUpdate);
     		

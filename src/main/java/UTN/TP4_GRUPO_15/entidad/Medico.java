@@ -63,6 +63,12 @@ public class Medico implements Serializable{
 	@Column(name="activo")
 	private boolean activo;
 	
+	@Column(name="dias_atencion")
+	private String diasAtencion;
+	
+	@Column(name="horarios_atencion")
+	private String horariosAtencion;
+	
 	/**
 	 * Constructores
 	**/
@@ -72,7 +78,8 @@ public class Medico implements Serializable{
 	}
 	
 	public Medico(int legajo, String nombre, String apellido, String genero, String nac, String correo,
-			String direccion, String localidad, String telefono, Usuario usuario, Especialidad especialidad, boolean activo) {
+			String direccion, String localidad, String telefono, Usuario usuario, Especialidad especialidad, boolean activo,
+			String diasAtencion, String horariosAtencion) {
 		super();
 		this.legajo = legajo;
 		this.nombre = nombre;
@@ -86,29 +93,8 @@ public class Medico implements Serializable{
 		this.usuario = usuario;
 		this.especialidad = especialidad;
 		this.activo = activo;
-	}
-	
-	public Medico(int legajo, String nombre, String apellido, String genero, String nac, String correo,
-			String direccion, String localidad, String telefono, boolean activo) {
-		super();
-		this.legajo = legajo;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.genero = genero;
-		this.nac = nac;
-		this.correo = correo;
-		this.direccion = direccion;
-		this.localidad = localidad;
-		this.telefono = telefono;
-		this.activo = activo;
-	}
-
-	public Especialidad getEspecialidad() {
-		return especialidad;
-	}
-
-	public void setEspecialidad(Especialidad especialidad) {
-		this.especialidad = especialidad;
+		this.diasAtencion = diasAtencion;
+		this.horariosAtencion = horariosAtencion;
 	}
 
 	/**
@@ -119,6 +105,30 @@ public class Medico implements Serializable{
 	
 	public Usuario getUsuario() {
 		return usuario;
+	}
+
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
+	}
+
+	public String getDiasAtencion() {
+		return diasAtencion;
+	}
+
+	public void setDiasAtencion(String diasAtencion) {
+		this.diasAtencion = diasAtencion;
+	}
+
+	public String getHorariosAtencion() {
+		return horariosAtencion;
+	}
+
+	public void setHorariosAtencion(String horariosAtencion) {
+		this.horariosAtencion = horariosAtencion;
 	}
 
 	public boolean isActivo() {
