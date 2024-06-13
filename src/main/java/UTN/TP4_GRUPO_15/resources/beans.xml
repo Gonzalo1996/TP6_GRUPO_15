@@ -21,33 +21,31 @@
     		<property name="usuarioController" ref="beanUsuarioController"></property>
 	</bean>
     
-    
-    
-    
-    
-    
-    
-    
-    <bean id="beanEspecie" class="UTN.TP4_GRUPO_15.entidad.Especialidad" >
-		<!--<property name="id" value="xxxx"></property>
-		<property name="nombre" value="0000"></property>-->	
+     
+    <bean id="beanEspecialidad" class="UTN.TP4_GRUPO_15.entidad.Especialidad" scope="prototype">
+    	<constructor-arg index="0" type="String" value="Clinico"></constructor-arg>
+		<constructor-arg index="1" type="boolean" value="true"></constructor-arg>
 	</bean>
     
-    <bean id="beanMedico" class="UTN.TP4_GRUPO_15.entidad.Medico" scope="singleton">
-		<!--  <property name="nombre" ref="beanDaoUsuario"></property>
-		<property name="apellido" ref="beanDaoUsuario"></property>
-		<property name="genero" ref="beanDaoUsuario"></property>
-		<property name="nac" ref="beanDaoUsuario"></property>
-		<property name="correo" ref="beanDaoUsuario"></property>
-		<property name="direccion" ref="beanDaoUsuario"></property>
-		<property name="localidad" ref="beanDaoUsuario"></property>
-		<property name="telefono" ref="beanDaoUsuario"></property>
+    
+    <!-- Inicio Dependencias Medicos -->
+    
+    <bean id="beanMedico" class="UTN.TP4_GRUPO_15.entidad.Medico" scope="prototype">
 		
-		<property name="usuario" ref="beanUsuario"></property>
-		<property name="id_especialidad" ref="beanEspecie"></property>-->
+		<constructor-arg index="0" type="int" value="1234"></constructor-arg>
+		<constructor-arg index="1" type="String" value="Gonzalo"></constructor-arg>
+		<constructor-arg index="2" type="String" value="Alderete"></constructor-arg>
+		<constructor-arg index="3" type="String" value="Masculino"></constructor-arg>
+		<constructor-arg index="4" type="String" value="12/02/1996"></constructor-arg>
+		<constructor-arg index="5" type="String" value="gonzalo@prueba.com"></constructor-arg>
+		<constructor-arg index="6" type="String" value="falsa 111"></constructor-arg>
+		<constructor-arg index="7" type="String" value="Pacheco"></constructor-arg>
+		<constructor-arg index="8" type="String" value="11-12229"></constructor-arg>
+	    <constructor-arg index="9" type="boolean" value="true" />
 	</bean>
 	
-	 	
+	<!-- Fin Dependencias Medicos -->
+	
 	<bean id="beanPaciente" class="UTN.TP4_GRUPO_15.entidad.Paciente" scope="singleton">
 	
 	</bean>

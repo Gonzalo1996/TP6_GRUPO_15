@@ -5,18 +5,28 @@ import java.util.List;
 import org.hibernate.Session;
 
 import UTN.TP4_GRUPO_15.dao.ConfigHibernate;
+import UTN.TP4_GRUPO_15.dao.IdaoMedico;
 import UTN.TP4_GRUPO_15.entidad.Especialidad;
 import UTN.TP4_GRUPO_15.entidad.Medico;
 import UTN.TP4_GRUPO_15.entidad.Usuario;
 
-public class medicoController {
+public class medicoController implements IdaoMedico{
+	
+	private ConfigHibernate ch;
+	
+	public medicoController() {
+	}
+	
+	public medicoController(ConfigHibernate conexion) {
+		this.ch = conexion;
+	}
 	
 	public String create(Medico medico)
 	{
 		
 		try
 		{
-			ConfigHibernate ch = new ConfigHibernate(Medico.class, Usuario.class, Especialidad.class);
+			ch = new ConfigHibernate(Medico.class, Usuario.class, Especialidad.class);
 			Session session = ch.openSession();
 			
 			session.beginTransaction();
@@ -38,7 +48,7 @@ public class medicoController {
 	public Medico readOne(int id) {
 		
 		try {
-			ConfigHibernate ch = new ConfigHibernate(Medico.class);
+			ch = new ConfigHibernate(Medico.class);
 			
 			Session session = ch.openSession();
 			session.beginTransaction();
@@ -56,7 +66,7 @@ public class medicoController {
 	
 	public List<Medico> listMedicos() {
 		
-		ConfigHibernate ch = new ConfigHibernate(Medico.class);
+		ch = new ConfigHibernate(Medico.class);
 		
 		Session session = ch.openSession();
 		session.beginTransaction();
@@ -68,7 +78,7 @@ public class medicoController {
 	}
 	
 	public String update(Medico medico) {
-		ConfigHibernate ch = new ConfigHibernate(Medico.class);
+		ch = new ConfigHibernate(Medico.class);
 		
 		Session session = ch.openSession();
 		
@@ -83,7 +93,7 @@ public class medicoController {
 	
 	public String delete(int id) {
 		
-		ConfigHibernate ch = new ConfigHibernate(Medico.class);
+		ch = new ConfigHibernate(Medico.class);
 		Session session = ch.openSession();
 		
 		session.beginTransaction();

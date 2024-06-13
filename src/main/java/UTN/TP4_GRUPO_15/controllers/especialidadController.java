@@ -3,16 +3,26 @@ package UTN.TP4_GRUPO_15.controllers;
 import org.hibernate.Session;
 
 import UTN.TP4_GRUPO_15.dao.ConfigHibernate;
+import UTN.TP4_GRUPO_15.dao.IdaoEspecialidad;
 import UTN.TP4_GRUPO_15.entidad.Especialidad;
 
-public class especialidadController {
+public class especialidadController implements IdaoEspecialidad{
+	
+	private ConfigHibernate ch;
+	
+	public especialidadController() {
+	}
+	
+	public especialidadController(ConfigHibernate conexion) {
+		this.ch = conexion;
+	}
 
 	public String create(Especialidad especialidad)
 	{
 		
 		try
 		{
-			ConfigHibernate ch = new ConfigHibernate(Especialidad.class);
+			ch = new ConfigHibernate(Especialidad.class);
 			Session session = ch.openSession();
 			
 			session.beginTransaction();
@@ -34,7 +44,7 @@ public class especialidadController {
 	public Especialidad readOne(int id) {
 		
 		try {
-			ConfigHibernate ch = new ConfigHibernate(Especialidad.class);
+			ch = new ConfigHibernate(Especialidad.class);
 			
 			Session session = ch.openSession();
 			session.beginTransaction();
@@ -53,7 +63,7 @@ public class especialidadController {
 	
 	public String delete(int id) {
 		
-		ConfigHibernate ch = new ConfigHibernate(Especialidad.class);
+		ch = new ConfigHibernate(Especialidad.class);
 		Session session = ch.openSession();
 		
 		session.beginTransaction();

@@ -9,20 +9,30 @@ import java.util.List;
 import org.hibernate.Session;
 
 import UTN.TP4_GRUPO_15.dao.ConfigHibernate;
+import UTN.TP4_GRUPO_15.dao.IdaoTurno;
 import UTN.TP4_GRUPO_15.entidad.Especialidad;
 import UTN.TP4_GRUPO_15.entidad.Medico;
 import UTN.TP4_GRUPO_15.entidad.Paciente;
 import UTN.TP4_GRUPO_15.entidad.Turno;
 import UTN.TP4_GRUPO_15.entidad.Usuario;
 
-public class turnoController {
+public class turnoController implements IdaoTurno{
+	
+	private ConfigHibernate ch;
+	
+	public turnoController() {
+	}
+	
+	public turnoController(ConfigHibernate conexion) {
+		this.ch = conexion;
+	}
 	
 	public String create(Turno turno)
 	{
 		
 		try
 		{
-			ConfigHibernate ch = new ConfigHibernate(Turno.class, Paciente.class, Medico.class, Especialidad.class, Usuario.class);
+			ch = new ConfigHibernate(Turno.class, Paciente.class, Medico.class, Especialidad.class, Usuario.class);
 			Session session = ch.openSession();
 			
 			session.beginTransaction();

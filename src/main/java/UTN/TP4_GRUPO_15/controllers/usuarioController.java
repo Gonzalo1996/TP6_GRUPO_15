@@ -4,16 +4,26 @@ package UTN.TP4_GRUPO_15.controllers;
 import org.hibernate.Session;
 
 import UTN.TP4_GRUPO_15.dao.ConfigHibernate;
+import UTN.TP4_GRUPO_15.dao.IdaoUsuario;
 import UTN.TP4_GRUPO_15.entidad.Usuario;
 
-public class usuarioController {
+public class usuarioController implements IdaoUsuario {
+	
+	private ConfigHibernate ch;
+	
+	public usuarioController() {
+	}
+	
+	public usuarioController(ConfigHibernate conexion) {
+		this.ch = conexion;
+	}
 	
 	public String create(Usuario usuario)
 	{
 		
 		try
 		{
-			ConfigHibernate ch = new ConfigHibernate(Usuario.class);
+			ch = new ConfigHibernate(Usuario.class);
 			Session session = ch.openSession();
 			
 			session.beginTransaction();

@@ -87,6 +87,29 @@ public class Medico implements Serializable{
 		this.especialidad = especialidad;
 		this.activo = activo;
 	}
+	
+	public Medico(int legajo, String nombre, String apellido, String genero, String nac, String correo,
+			String direccion, String localidad, String telefono, boolean activo) {
+		super();
+		this.legajo = legajo;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.genero = genero;
+		this.nac = nac;
+		this.correo = correo;
+		this.direccion = direccion;
+		this.localidad = localidad;
+		this.telefono = telefono;
+		this.activo = activo;
+	}
+
+	public Especialidad getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(Especialidad especialidad) {
+		this.especialidad = especialidad;
+	}
 
 	/**
 	 * Getters and Setters

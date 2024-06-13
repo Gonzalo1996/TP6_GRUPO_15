@@ -28,6 +28,8 @@ import org.springframework.context.*;
  */
 public class App 
 {
+	static ApplicationContext appContext;
+	
     public static void main( String[] args )
     {
     	Scanner sc = new Scanner(System.in);
@@ -60,7 +62,7 @@ public class App
     		
     		
     		//Creación de usuarios
-    		ApplicationContext appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		usuarioNegocio usuarioNegocio = (usuarioNegocio) appContext.getBean("beanUsuarioNegocio");
 
     		Usuario usuario1 = (Usuario) appContext.getBean("beanUsuario");
@@ -120,6 +122,22 @@ public class App
     		
     		//Creación de especialidades
     		
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		Especialidad especialidad1 = (Especialidad)appContext.getBean("beanEspecialidad");
+    		
+    		Especialidad especialidad2 = (Especialidad)appContext.getBean("beanEspecialidad");
+    		especialidad2.setNombre("Cardiologo");
+    		especialidad2.setActivo(false);
+    		
+    		Especialidad especialidad3 = (Especialidad)appContext.getBean("beanEspecialidad");
+    		especialidad3.setNombre("Neurologo");
+    		especialidad3.setActivo(true);
+    		
+    		
+    		System.out.println(new especialidadNegocio().create(especialidad1));
+    		System.out.println(new especialidadNegocio().create(especialidad2));
+    		System.out.println(new especialidadNegocio().create(especialidad3));
+    		/*
     		Especialidad especialidad1 = new Especialidad("Clinico", true);
     		Especialidad especialidad2 = new Especialidad("Cardiologo", true);
     		Especialidad especialidad3 = new Especialidad("Nefrologo", true);
@@ -127,9 +145,32 @@ public class App
     		System.out.println(new especialidadNegocio().create(especialidad1));
     		System.out.println(new especialidadNegocio().create(especialidad2));
     		System.out.println(new especialidadNegocio().create(especialidad3));
-
+    		*/
 
     		//Creación de medicos
+    		
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		
+    		Medico medico01 = (Medico)appContext.getBean("beanMedico");
+    		medico01.setUsuario(usuario1);
+    		medico01.setEspecialidad(especialidad1);
+    		
+    		Medico medico02 = (Medico)appContext.getBean("beanMedico");
+    		medico02.setLegajo(1111);
+    		medico02.setNombre("Gaston");
+    		medico02.setApellido("Argañaz");
+    		medico02.setGenero("Masculino");
+    		medico02.setNac("01/06/1996");
+    		medico02.setCorreo("gaston@prueba.com");
+    		medico02.setDireccion("falsa 222");
+    		medico02.setLocalidad("Pacheco");
+    		medico02.setTelefono("11-12229");
+    		medico02.setUsuario(usuario2);
+    		medico02.setEspecialidad(especialidad2);
+    		
+    		System.out.println(new medicoNegocio().create(medico01));
+    		System.out.println(new medicoNegocio().create(medico02));
+    		/*
     		Medico medico01 = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario1, especialidad1, true);
     		Medico medico02 = new Medico(1111, "Gaston", "Argañaz", "Masculino", "01/06/1996", "gaston@prueba.com", "falsa 222", "Pacheco", "11-12229", usuario2, especialidad1, true);
     		Medico medico03 = new Medico(2222, "Leonel", "Herrera", "Masculino", "30/12/2000", "leonel@prueba.com", "falsa 333", "Pacheco", "11-12229", usuario3, especialidad1, true);
@@ -140,7 +181,8 @@ public class App
     		Medico medico08 = new Medico(7777, "Pepita", "Perez", "Femenina", "04/04/1999", "pepita@prueba.com", "falsa 888", "Pacheco", "11-12229", usuario8, especialidad1, true);
     		Medico medico09 = new Medico(8888, "Juan", "Diaz", "Masculino", "12/02/1996", "juan@prueba.com", "falsa 999", "Pacheco", "11-12229", usuario9, especialidad1, true);
     		Medico medico10 = new Medico(9999, "Laura", "Morales", "Femenina", "02/12/2000", "laura@prueba.com", "falsa 321", "Pacheco", "11-12229", usuario10, especialidad3, true);
-
+			
+    		
     		System.out.println(new medicoNegocio().create(medico01));
     		System.out.println(new medicoNegocio().create(medico02));
     		System.out.println(new medicoNegocio().create(medico03));
@@ -151,7 +193,7 @@ public class App
     		System.out.println(new medicoNegocio().create(medico08));
     		System.out.println(new medicoNegocio().create(medico09));
     		System.out.println(new medicoNegocio().create(medico10));
-    		
+    		*/
     		
     		// Creación de pacientes
     		Paciente paciente1 = new Paciente("María", "González", "123456789", "1234567890", "Calle Falsa 123", "Ciudad", "Provincia", LocalDate.of(1980, 5, 15), "maria@example.com", true);
@@ -174,13 +216,14 @@ public class App
     		Turno turno2 = new Turno(medico01, paciente2, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación2", "ausente", true);
     		Turno turno3 = new Turno(medico01, paciente3, LocalDate.of(2024, 02, 12), LocalTime.of(14, 01), "observación3", "ausente", true);
     		Turno turno4 = new Turno(medico01, paciente4, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación4", "ausente", true);
+    		/*
     		Turno turno5 = new Turno(medico05, paciente5, LocalDate.of(2024, 02, 13), LocalTime.of(14, 01), "observación5", "presente", true);
     		Turno turno6 = new Turno(medico06, paciente6, LocalDate.of(2024, 01, 13), LocalTime.of(14, 01), "observación6", "presente", true);
     		Turno turno7 = new Turno(medico07, paciente7, LocalDate.of(2024, 02, 14), LocalTime.of(14, 01), "observación7", "presente", true);
     		Turno turno8 = new Turno(medico08, paciente8, LocalDate.of(2024, 01, 14), LocalTime.of(14, 01), "observación8", "presente", true);
     		Turno turno9 = new Turno(medico09, paciente9, LocalDate.of(2024, 04, 15), LocalTime.of(14, 01), "observación9", "ausente", true);
     		Turno turno10 = new Turno(medico10, paciente10, LocalDate.of(2024, 01, 15), LocalTime.of(14, 01), "observación10", "presente", true);
-
+    		 */
     		
     		
     		
@@ -205,13 +248,14 @@ public class App
     		System.out.println(new turnoNegocio().create(turno2));
     		System.out.println(new turnoNegocio().create(turno3));
     		System.out.println(new turnoNegocio().create(turno4));
+    		/*
     		System.out.println(new turnoNegocio().create(turno5));
     		System.out.println(new turnoNegocio().create(turno6));
     		System.out.println(new turnoNegocio().create(turno7));
     		System.out.println(new turnoNegocio().create(turno8));
     		System.out.println(new turnoNegocio().create(turno9));
     		System.out.println(new turnoNegocio().create(turno10));
-    		
+    		*/
     		break;
     		
     	case 2:
@@ -272,11 +316,20 @@ public class App
     		
     	case 11:
     		//Listar usuarios con spring core
-    		ApplicationContext appcontext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
-    		Usuario user01 = (Usuario)appcontext.getBean("beanUsuario");
-    		System.out.println(user01.toString());
-    	
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		Especialidad esp01 = (Especialidad)appContext.getBean("beanEspecialidad");
     		
+    		Especialidad esp02 = (Especialidad)appContext.getBean("beanEspecialidad");
+    		esp02.setNombre("Cardiologo");
+    		esp02.setActivo(false);
+    		
+    		Especialidad esp03 = (Especialidad)appContext.getBean("beanEspecialidad");
+    		esp03.setNombre("Neurologo");
+    		esp03.setActivo(true);
+    		
+    		System.out.println(esp01.toString());
+    		System.out.println(esp02.toString());
+    		System.out.println(esp03.toString());
     		break;
     		
     	case 12:
