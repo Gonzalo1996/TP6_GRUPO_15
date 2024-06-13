@@ -55,9 +55,20 @@
 	
 	<!-- Fin Dependencias Medicos -->
 	
-	<bean id="beanPaciente" class="UTN.TP4_GRUPO_15.entidad.Paciente" scope="singleton">
 	
+	<!-- Pacientes -->
+	
+	
+	<bean id="beanPaciente" class="UTN.TP4_GRUPO_15.entidad.Paciente" scope="prototype">
 	</bean>
+    
+    
+    <bean id="beanPacienteNegocio" class="UTN.TP4_GRUPO_15.negocio.pacienteNegocio" scope="singleton">
+	</bean>
+	
+	
+	<!-- Pacientes -->
+	
 	
 	<bean id="beanTurno" class="UTN.TP4_GRUPO_15.entidad.Turno">
 	

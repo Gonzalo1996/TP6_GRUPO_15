@@ -13,6 +13,7 @@ import UTN.TP4_GRUPO_15.entidad.Paciente;
 import UTN.TP4_GRUPO_15.entidad.Usuario;
 import UTN.TP4_GRUPO_15.negocio.especialidadNegocio;
 import UTN.TP4_GRUPO_15.negocio.medicoNegocio;
+import UTN.TP4_GRUPO_15.negocio.pacienteNegocio;
 import UTN.TP4_GRUPO_15.negocio.turnoNegocio;
 import UTN.TP4_GRUPO_15.negocio.usuarioNegocio;
 import UTN.TP4_GRUPO_15.entidad.Turno;
@@ -198,6 +199,8 @@ public class App
     		*/
     		
     		// Creación de pacientes
+    		
+    		/*
     		Paciente paciente1 = new Paciente("María", "González", "123456789", "1234567890", "Calle Falsa 123", "Ciudad", "Provincia", LocalDate.of(1980, 5, 15), "maria@example.com", true);
     		Paciente paciente2 = new Paciente("Juan", "Martínez", "987654321", "0987654321", "Av. Libertador 456", "Otra Ciudad", "Otra Provincia", LocalDate.of(1975, 10, 8), "juan@example.com", true);
     		Paciente paciente3 = new Paciente("Luis", "López", "456789123", "0123456789", "Av. Rivadavia 789", "Otra Ciudad", "Otra Provincia", LocalDate.of(1990, 12, 20), "luis@example.com", true);
@@ -208,16 +211,30 @@ public class App
     		Paciente paciente8 = new Paciente("Lucía", "Pérez", "753951852", "7539518520", "Av. Santa Fe 777", "Otra Ciudad", "Otra Provincia", LocalDate.of(1995, 9, 17), "lucia@example.com", true);
     		Paciente paciente9 = new Paciente("Pedro", "Fernández", "258369147", "2583691470", "Calle Mayor 999", "Otra Ciudad", "Otra Provincia", LocalDate.of(1987, 2, 9), "pedro@example.com", true);
     		Paciente paciente10 = new Paciente("Sofía", "Álvarez", "147258369", "1472583690", "Av. 9 de Julio 666", "Otra Ciudad", "Otra Provincia", LocalDate.of(1993, 11, 30), "sofia@example.com", true);
-
+			*/
     		
+    		
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		pacienteNegocio pacienteNegocio = (pacienteNegocio) appContext.getBean("beanPacienteNegocio");
+    		
+    		Paciente paciente1 = (Paciente) appContext.getBean("beanPaciente");
+    		
+    		paciente1.setApellido("González");
+    		paciente1.setNombre("María");
+    		paciente1.setCorreo("maria@example.com");
+    		paciente1.setDni("123456");
+    		paciente1.setLocalidad("San Fernando");
+    		paciente1.setProvincia("Buenos Aires");
+    		paciente1.setTelefono("44444");
+    		paciente1.setFechaNacimiento(LocalDate.of(1980, 5, 15));
     		
     		// Creación de turnos
     		
     		
     		Turno turno1 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 11), LocalTime.of(14, 01), "observación1", "presente", true);
-    		Turno turno2 = new Turno(medico01, paciente2, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación2", "ausente", true);
-    		Turno turno3 = new Turno(medico01, paciente3, LocalDate.of(2024, 02, 12), LocalTime.of(14, 01), "observación3", "ausente", true);
-    		Turno turno4 = new Turno(medico01, paciente4, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación4", "ausente", true);
+    		Turno turno2 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación2", "ausente", true);
+    		Turno turno3 = new Turno(medico01, paciente1, LocalDate.of(2024, 02, 12), LocalTime.of(14, 01), "observación3", "ausente", true);
+    		Turno turno4 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación4", "ausente", true);
     		/*
     		Turno turno5 = new Turno(medico05, paciente5, LocalDate.of(2024, 02, 13), LocalTime.of(14, 01), "observación5", "presente", true);
     		Turno turno6 = new Turno(medico06, paciente6, LocalDate.of(2024, 01, 13), LocalTime.of(14, 01), "observación6", "presente", true);
