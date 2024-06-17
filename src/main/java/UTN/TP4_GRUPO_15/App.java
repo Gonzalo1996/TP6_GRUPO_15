@@ -61,7 +61,6 @@ public class App
     	case 1:
     		
     		
-    		
     		//Creación de usuarios
     		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		usuarioNegocio usuarioNegocio = (usuarioNegocio) appContext.getBean("beanUsuarioNegocio");
@@ -524,12 +523,10 @@ public class App
     		usuario11.setContrasenia("123");
     		usuario11.setActivo(true);
     		
-    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		Especialidad especialidad4 = (Especialidad) appContext.getBean("beanEspecialidad");
     		especialidad4.setNombre("Clínico");
     		especialidad4.setActivo(true);
     		
-    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		Medico medicoUpdate = (Medico) appContext.getBean("beanMedico");
     		medicoUpdate.setNombre("Gonzalo");
     		medicoUpdate.setApellido("Alderete");
@@ -555,10 +552,6 @@ public class App
     		
     		
     	case 3:
-    		/*
-    		medicoController medicoDelete = nsew medicoController();
-    		medicoDelete.delete(9);
-    		*/
     		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		especialidadNegocio especialidadNegocio = (especialidadNegocio) appContext.getBean("beanEspecialidadNegocio");
     		especialidadNegocio.delete(4);

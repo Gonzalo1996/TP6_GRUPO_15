@@ -80,7 +80,7 @@
 	<!-- Pacientes -->
 	
 	
-	<!-- Turnos -->
+	<!-- Especialidades -->
 	
 
 	<bean id="beanEspecialidadController" class="UTN.TP4_GRUPO_15.controllers.especialidadController" scope ="singleton">
@@ -92,7 +92,7 @@
 	</bean>
 	
 	
-	<!-- Turnos -->
+	<!-- Especialidades -->
 	
 	
 	
