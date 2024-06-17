@@ -53,6 +53,16 @@
    	    <constructor-arg index="13" type="String" value="16:00-23:00" />
 	</bean>
 	
+	
+	<bean id="beanMedicoController" class="UTN.TP4_GRUPO_15.controllers.medicoController" scope ="singleton">
+	</bean>
+	
+	
+	 <bean id="beanMedicoNegocio" class="UTN.TP4_GRUPO_15.negocio.medicoNegocio" scope="singleton">
+    		<property name="medicoController" ref="beanMedicoController"></property>
+	</bean>
+	
+	
 	<!-- Fin Dependencias Medicos -->
 	
 	
@@ -70,16 +80,38 @@
 	<!-- Pacientes -->
 	
 	
-	<bean id="beanTurno" class="UTN.TP4_GRUPO_15.entidad.Turno">
+	<!-- Turnos -->
 	
+
+	<bean id="beanEspecialidadController" class="UTN.TP4_GRUPO_15.controllers.especialidadController" scope ="singleton">
 	</bean>
 	
 	
-	
-	<bean id="beanControladorMedico" class="UTN.TP4_GRUPO_15.controllers.medicoController">
-	
+	 <bean id="beanEspecialidadNegocio" class="UTN.TP4_GRUPO_15.negocio.especialidadNegocio" scope="singleton">
+    		<property name="especialidadController" ref="beanEspecialidadController"></property>
 	</bean>
 	
+	
+	<!-- Turnos -->
+	
+	
+	
+	<!-- Turnos -->
+	
+	
+	<bean id="beanTurno" class="UTN.TP4_GRUPO_15.entidad.Turno" scope="prototype">
+	</bean>
+
+	<bean id="beanTurnoController" class="UTN.TP4_GRUPO_15.controllers.turnoController" scope ="singleton">
+	</bean>
+	
+	
+	 <bean id="beanTurnoNegocio" class="UTN.TP4_GRUPO_15.negocio.turnoNegocio" scope="singleton">
+    		<property name="turnoController" ref="beanTurnoController"></property>
+	</bean>
+	
+	
+	<!-- Turnos -->
 	
 	
 	

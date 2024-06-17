@@ -138,87 +138,171 @@ public class App
     		System.out.println(new especialidadNegocio().create(especialidad1));
     		System.out.println(new especialidadNegocio().create(especialidad2));
     		System.out.println(new especialidadNegocio().create(especialidad3));
-    		/*
-    		Especialidad especialidad1 = new Especialidad("Clinico", true);
-    		Especialidad especialidad2 = new Especialidad("Cardiologo", true);
-    		Especialidad especialidad3 = new Especialidad("Nefrologo", true);
-    		
-    		System.out.println(new especialidadNegocio().create(especialidad1));
-    		System.out.println(new especialidadNegocio().create(especialidad2));
-    		System.out.println(new especialidadNegocio().create(especialidad3));
-    		*/
 
     		//Creación de medicos
     		
     		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		
-    		Medico medico01 = (Medico)appContext.getBean("beanMedico");
+    		Medico medico1 = (Medico)appContext.getBean("beanMedico");
     		//medico01.setUsuario(usuario1);
     		//medico01.setEspecialidad(especialidad1);
     		
-    		Medico medico02 = (Medico)appContext.getBean("beanMedico");
-    		medico02.setLegajo(1111);
-    		medico02.setNombre("Gaston");
-    		medico02.setApellido("Argañaz");
-    		medico02.setGenero("Masculino");
-    		medico02.setNac("01/06/1996");
-    		medico02.setCorreo("gaston@prueba.com");
-    		medico02.setDireccion("falsa 222");
-    		medico02.setLocalidad("Pacheco");
-    		medico02.setTelefono("11-12229");
-    		medico02.setUsuario(usuario2);
-    		medico02.setEspecialidad(especialidad2);
-    		medico02.setDiasAtencion("Lunes,Martes");
-    		medico02.setHorariosAtencion("16:00-21:00");
+    		Medico medico2 = (Medico)appContext.getBean("beanMedico");
+    		medico2.setLegajo(1111);
+    		medico2.setNombre("Gaston");
+    		medico2.setApellido("Argañaz");
+    		medico2.setGenero("Masculino");
+    		medico2.setNac("01/06/1996");
+    		medico2.setCorreo("gaston@prueba.com");
+    		medico2.setDireccion("falsa 222");
+    		medico2.setLocalidad("Pacheco");
+    		medico2.setTelefono("11-12229");
+    		medico2.setUsuario(usuario2);
+    		medico2.setEspecialidad(especialidad2);
+    		medico2.setDiasAtencion("Lunes,Martes");
+    		medico2.setHorariosAtencion("16:00-21:00");
     		
-    		System.out.println(new medicoNegocio().create(medico01));
-    		System.out.println(new medicoNegocio().create(medico02));
-    		/*
-    		Medico medico01 = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario1, especialidad1, true);
-    		Medico medico02 = new Medico(1111, "Gaston", "Argañaz", "Masculino", "01/06/1996", "gaston@prueba.com", "falsa 222", "Pacheco", "11-12229", usuario2, especialidad1, true);
-    		Medico medico03 = new Medico(2222, "Leonel", "Herrera", "Masculino", "30/12/2000", "leonel@prueba.com", "falsa 333", "Pacheco", "11-12229", usuario3, especialidad1, true);
-    		Medico medico04 = new Medico(3333, "Guido", "Romero", "Masculino", "11/02/2001", "guido@prueba.com", "falsa 444", "Pacheco", "11-12229", usuario4, especialidad2, true);
-    		Medico medico05 = new Medico(4444, "Walter", "Pizzo", "Masculino", "29/02/1998", "walter@prueba.com", "falsa 555", "Pacheco", "11-12229", usuario5, especialidad3, true);
-    		Medico medico06 = new Medico(5555, "Tamara", "Herrera", "Femenina", "14/05/2000", "tamara@prueba.com", "falsa 666", "Pacheco", "11-12229", usuario6, especialidad3, true);
-    		Medico medico07 = new Medico(6666, "Pepito", "Perez", "Masculino", "12/02/1996", "pepito@prueba.com", "falsa 777", "Pacheco", "11-12229", usuario7, especialidad2, true);
-    		Medico medico08 = new Medico(7777, "Pepita", "Perez", "Femenina", "04/04/1999", "pepita@prueba.com", "falsa 888", "Pacheco", "11-12229", usuario8, especialidad1, true);
-    		Medico medico09 = new Medico(8888, "Juan", "Diaz", "Masculino", "12/02/1996", "juan@prueba.com", "falsa 999", "Pacheco", "11-12229", usuario9, especialidad1, true);
-    		Medico medico10 = new Medico(9999, "Laura", "Morales", "Femenina", "02/12/2000", "laura@prueba.com", "falsa 321", "Pacheco", "11-12229", usuario10, especialidad3, true);
-			
+    		Medico medico3 = (Medico) appContext.getBean("beanMedico");
+    		medico3.setLegajo(1003);
+    		medico3.setNombre("Ana");
+    		medico3.setApellido("González");
+    		medico3.setGenero("Femenino");
+    		medico3.setNac("20/11/1985");
+    		medico3.setCorreo("ana.gonzalez@prueba.com");
+    		medico3.setDireccion("Calle Falsa 456");
+    		medico3.setLocalidad("Tigre");
+    		medico3.setTelefono("11-33333");
+    		medico3.setUsuario(usuario3);
+    		medico3.setEspecialidad(especialidad3);
+    		medico3.setDiasAtencion("Martes,Jueves");
+    		medico3.setHorariosAtencion("09:00-15:00");
+
+    		Medico medico4 = (Medico) appContext.getBean("beanMedico");
+    		medico4.setLegajo(1004);
+    		medico4.setNombre("José");
+    		medico4.setApellido("Martínez");
+    		medico4.setGenero("Masculino");
+    		medico4.setNac("05/03/1975");
+    		medico4.setCorreo("jose.martinez@prueba.com");
+    		medico4.setDireccion("Calle Falsa 789");
+    		medico4.setLocalidad("San Isidro");
+    		medico4.setTelefono("11-44444");
+    		medico4.setUsuario(usuario4);
+    		medico4.setEspecialidad(especialidad1);
+    		medico4.setDiasAtencion("Miércoles,Viernes");
+    		medico4.setHorariosAtencion("10:00-16:00");
+
+    		Medico medico5 = (Medico) appContext.getBean("beanMedico");
+    		medico5.setLegajo(1005);
+    		medico5.setNombre("Lucía");
+    		medico5.setApellido("Fernández");
+    		medico5.setGenero("Femenino");
+    		medico5.setNac("14/02/1990");
+    		medico5.setCorreo("lucia.fernandez@prueba.com");
+    		medico5.setDireccion("Calle Falsa 101");
+    		medico5.setLocalidad("Vicente López");
+    		medico5.setTelefono("11-55555");
+    		medico5.setUsuario(usuario5);
+    		medico5.setEspecialidad(especialidad2);
+    		medico5.setDiasAtencion("Lunes,Miércoles");
+    		medico5.setHorariosAtencion("12:00-18:00");
+
+    		Medico medico6 = (Medico) appContext.getBean("beanMedico");
+    		medico6.setLegajo(1006);
+    		medico6.setNombre("Sofía");
+    		medico6.setApellido("García");
+    		medico6.setGenero("Femenino");
+    		medico6.setNac("18/07/1992");
+    		medico6.setCorreo("sofia.garcia@prueba.com");
+    		medico6.setDireccion("Calle Falsa 102");
+    		medico6.setLocalidad("Morón");
+    		medico6.setTelefono("11-66666");
+    		medico6.setUsuario(usuario6);
+    		medico6.setEspecialidad(especialidad3);
+    		medico6.setDiasAtencion("Jueves,Viernes");
+    		medico6.setHorariosAtencion("14:00-20:00");
+
+    		Medico medico7 = (Medico) appContext.getBean("beanMedico");
+    		medico7.setLegajo(1007);
+    		medico7.setNombre("Juan");
+    		medico7.setApellido("Rodríguez");
+    		medico7.setGenero("Masculino");
+    		medico7.setNac("22/08/1988");
+    		medico7.setCorreo("juan.rodriguez@prueba.com");
+    		medico7.setDireccion("Calle Falsa 103");
+    		medico7.setLocalidad("La Plata");
+    		medico7.setTelefono("11-77777");
+    		medico7.setUsuario(usuario7);
+    		medico7.setEspecialidad(especialidad1);
+    		medico7.setDiasAtencion("Martes,Jueves");
+    		medico7.setHorariosAtencion("08:00-14:00");
+
+    		Medico medico8 = (Medico) appContext.getBean("beanMedico");
+    		medico8.setLegajo(1008);
+    		medico8.setNombre("Valentina");
+    		medico8.setApellido("Sánchez");
+    		medico8.setGenero("Femenino");
+    		medico8.setNac("30/09/1993");
+    		medico8.setCorreo("valentina.sanchez@prueba.com");
+    		medico8.setDireccion("Calle Falsa 104");
+    		medico8.setLocalidad("Quilmes");
+    		medico8.setTelefono("11-88888");
+    		medico8.setUsuario(usuario8);
+    		medico8.setEspecialidad(especialidad2);
+    		medico8.setDiasAtencion("Miércoles,Viernes");
+    		medico8.setHorariosAtencion("09:00-15:00");
+
+    		Medico medico9 = (Medico) appContext.getBean("beanMedico");
+    		medico9.setLegajo(1009);
+    		medico9.setNombre("Diego");
+    		medico9.setApellido("Méndez");
+    		medico9.setGenero("Masculino");
+    		medico9.setNac("12/12/1970");
+    		medico9.setCorreo("diego.mendez@prueba.com");
+    		medico9.setDireccion("Calle Falsa 105");
+    		medico9.setLocalidad("Berazategui");
+    		medico9.setTelefono("11-99999");
+    		medico9.setUsuario(usuario9);
+    		medico9.setEspecialidad(especialidad3);
+    		medico9.setDiasAtencion("Lunes,Martes");
+    		medico9.setHorariosAtencion("16:00-21:00");
+
+    		Medico medico10 = (Medico) appContext.getBean("beanMedico");
+    		medico10.setLegajo(1010);
+    		medico10.setNombre("Camila");
+    		medico10.setApellido("Hernández");
+    		medico10.setGenero("Femenino");
+    		medico10.setNac("25/06/1982");
+    		medico10.setCorreo("camila.hernandez@prueba.com");
+    		medico10.setDireccion("Calle Falsa 106");
+    		medico10.setLocalidad("Avellaneda");
+    		medico10.setTelefono("11-101010");
+    		medico10.setUsuario(usuario10);
+    		medico10.setEspecialidad(especialidad1);
+    		medico10.setDiasAtencion("Lunes,Miércoles");
+    		medico10.setHorariosAtencion("10:00-16:00");
     		
-    		System.out.println(new medicoNegocio().create(medico01));
-    		System.out.println(new medicoNegocio().create(medico02));
-    		System.out.println(new medicoNegocio().create(medico03));
-    		System.out.println(new medicoNegocio().create(medico04));
-    		System.out.println(new medicoNegocio().create(medico05));
-    		System.out.println(new medicoNegocio().create(medico06));
-    		System.out.println(new medicoNegocio().create(medico07));
-    		System.out.println(new medicoNegocio().create(medico08));
-    		System.out.println(new medicoNegocio().create(medico09));
-    		System.out.println(new medicoNegocio().create(medico10));
-    		*/
+    		
+    		medicoNegocio medicoNegocio = (medicoNegocio) appContext.getBean("beanMedicoNegocio");
+    		System.out.println(medicoNegocio.create(medico1));
+    		System.out.println(medicoNegocio.create(medico2));
+    		System.out.println(medicoNegocio.create(medico3));
+    		System.out.println(medicoNegocio.create(medico4));
+    		System.out.println(medicoNegocio.create(medico5));
+    		System.out.println(medicoNegocio.create(medico6));
+    		System.out.println(medicoNegocio.create(medico7));
+    		System.out.println(medicoNegocio.create(medico8));
+    		System.out.println(medicoNegocio.create(medico9));
+    		System.out.println(medicoNegocio.create(medico10));
+
+    		
     		
     		// Creación de pacientes
-    		
-    		/*
-    		Paciente paciente1 = new Paciente("María", "González", "123456789", "1234567890", "Calle Falsa 123", "Ciudad", "Provincia", LocalDate.of(1980, 5, 15), "maria@example.com", true);
-    		Paciente paciente2 = new Paciente("Juan", "Martínez", "987654321", "0987654321", "Av. Libertador 456", "Otra Ciudad", "Otra Provincia", LocalDate.of(1975, 10, 8), "juan@example.com", true);
-    		Paciente paciente3 = new Paciente("Luis", "López", "456789123", "0123456789", "Av. Rivadavia 789", "Otra Ciudad", "Otra Provincia", LocalDate.of(1990, 12, 20), "luis@example.com", true);
-    		Paciente paciente4 = new Paciente("Ana", "Rodríguez", "789123456", "6789012345", "Av. Belgrano 101", "Otra Ciudad", "Otra Provincia", LocalDate.of(1985, 7, 3), "ana@example.com",true);
-    		Paciente paciente5 = new Paciente("Carlos", "Sánchez", "321654987", "5432109876", "Calle Principal 555", "Otra Ciudad", "Otra Provincia", LocalDate.of(1970, 3, 28), "carlos@example.com", true);
-    		Paciente paciente6 = new Paciente("Laura", "Díaz", "654987321", "9876543210", "Av. Corrientes 222", "Otra Ciudad", "Otra Provincia", LocalDate.of(1982, 8, 12), "laura@example.com", true);
-    		Paciente paciente7 = new Paciente("José", "Gómez", "159753468", "1597534680", "Av. San Martín 333", "Otra Ciudad", "Otra Provincia", LocalDate.of(1978, 6, 5), "jose@example.com", true);
-    		Paciente paciente8 = new Paciente("Lucía", "Pérez", "753951852", "7539518520", "Av. Santa Fe 777", "Otra Ciudad", "Otra Provincia", LocalDate.of(1995, 9, 17), "lucia@example.com", true);
-    		Paciente paciente9 = new Paciente("Pedro", "Fernández", "258369147", "2583691470", "Calle Mayor 999", "Otra Ciudad", "Otra Provincia", LocalDate.of(1987, 2, 9), "pedro@example.com", true);
-    		Paciente paciente10 = new Paciente("Sofía", "Álvarez", "147258369", "1472583690", "Av. 9 de Julio 666", "Otra Ciudad", "Otra Provincia", LocalDate.of(1993, 11, 30), "sofia@example.com", true);
-			*/
-    		
     		
     		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
     		pacienteNegocio pacienteNegocio = (pacienteNegocio) appContext.getBean("beanPacienteNegocio");
     		
     		Paciente paciente1 = (Paciente) appContext.getBean("beanPaciente");
-    		
     		paciente1.setApellido("González");
     		paciente1.setNombre("María");
     		paciente1.setCorreo("maria@example.com");
@@ -227,62 +311,243 @@ public class App
     		paciente1.setProvincia("Buenos Aires");
     		paciente1.setTelefono("44444");
     		paciente1.setFechaNacimiento(LocalDate.of(1980, 5, 15));
+
+    		Paciente paciente2 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente2.setApellido("Pérez");
+    		paciente2.setNombre("Jesús");
+    		paciente2.setCorreo("jesus@example.com");
+    		paciente2.setDni("654321");
+    		paciente2.setLocalidad("Tigre");
+    		paciente2.setProvincia("Buenos Aires");
+    		paciente2.setTelefono("55555");
+    		paciente2.setFechaNacimiento(LocalDate.of(1985, 7, 20));
+
+    		Paciente paciente3 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente3.setApellido("López");
+    		paciente3.setNombre("Ana");
+    		paciente3.setCorreo("ana@example.com");
+    		paciente3.setDni("987654");
+    		paciente3.setLocalidad("Pilar");
+    		paciente3.setProvincia("Buenos Aires");
+    		paciente3.setTelefono("66666");
+    		paciente3.setFechaNacimiento(LocalDate.of(1990, 3, 10));
+
+    		Paciente paciente4 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente4.setApellido("Martínez");
+    		paciente4.setNombre("Carlos");
+    		paciente4.setCorreo("carlos@example.com");
+    		paciente4.setDni("321654");
+    		paciente4.setLocalidad("San Isidro");
+    		paciente4.setProvincia("Buenos Aires");
+    		paciente4.setTelefono("77777");
+    		paciente4.setFechaNacimiento(LocalDate.of(1975, 11, 25));
+
+    		Paciente paciente5 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente5.setApellido("Fernández");
+    		paciente5.setNombre("Lucía");
+    		paciente5.setCorreo("lucia@example.com");
+    		paciente5.setDni("789123");
+    		paciente5.setLocalidad("Vicente López");
+    		paciente5.setProvincia("Buenos Aires");
+    		paciente5.setTelefono("88888");
+    		paciente5.setFechaNacimiento(LocalDate.of(1995, 2, 5));
+
+    		Paciente paciente6 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente6.setApellido("García");
+    		paciente6.setNombre("Sofía");
+    		paciente6.setCorreo("sofia@example.com");
+    		paciente6.setDni("456789");
+    		paciente6.setLocalidad("Morón");
+    		paciente6.setProvincia("Buenos Aires");
+    		paciente6.setTelefono("99999");
+    		paciente6.setFechaNacimiento(LocalDate.of(2000, 12, 30));
+
+    		Paciente paciente7 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente7.setApellido("Rodríguez");
+    		paciente7.setNombre("Juan");
+    		paciente7.setCorreo("juan@example.com");
+    		paciente7.setDni("147258");
+    		paciente7.setLocalidad("La Plata");
+    		paciente7.setProvincia("Buenos Aires");
+    		paciente7.setTelefono("101010");
+    		paciente7.setFechaNacimiento(LocalDate.of(1988, 8, 18));
+
+    		Paciente paciente8 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente8.setApellido("Sánchez");
+    		paciente8.setNombre("Valentina");
+    		paciente8.setCorreo("valentina@example.com");
+    		paciente8.setDni("369852");
+    		paciente8.setLocalidad("Quilmes");
+    		paciente8.setProvincia("Buenos Aires");
+    		paciente8.setTelefono("11111");
+    		paciente8.setFechaNacimiento(LocalDate.of(1993, 9, 9));
+
+    		Paciente paciente9 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente9.setApellido("Méndez");
+    		paciente9.setNombre("Diego");
+    		paciente9.setCorreo("diego@example.com");
+    		paciente9.setDni("258369");
+    		paciente9.setLocalidad("Berazategui");
+    		paciente9.setProvincia("Buenos Aires");
+    		paciente9.setTelefono("121212");
+    		paciente9.setFechaNacimiento(LocalDate.of(1970, 4, 22));
+
+    		Paciente paciente10 = (Paciente) appContext.getBean("beanPaciente");
+    		paciente10.setApellido("Hernández");
+    		paciente10.setNombre("Camila");
+    		paciente10.setCorreo("camila@example.com");
+    		paciente10.setDni("369147");
+    		paciente10.setLocalidad("Avellaneda");
+    		paciente10.setProvincia("Buenos Aires");
+    		paciente10.setTelefono("131313");
+    		paciente10.setFechaNacimiento(LocalDate.of(1982, 6, 16));
+    		
+    		
+
     		
     		// Creación de turnos
     		
     		
-    		Turno turno1 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 11), LocalTime.of(14, 01), "observación1", "presente", true);
-    		Turno turno2 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación2", "ausente", true);
-    		Turno turno3 = new Turno(medico01, paciente1, LocalDate.of(2024, 02, 12), LocalTime.of(14, 01), "observación3", "ausente", true);
-    		Turno turno4 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 01), LocalTime.of(14, 01), "observación4", "ausente", true);
-    		/*
-    		Turno turno5 = new Turno(medico05, paciente5, LocalDate.of(2024, 02, 13), LocalTime.of(14, 01), "observación5", "presente", true);
-    		Turno turno6 = new Turno(medico06, paciente6, LocalDate.of(2024, 01, 13), LocalTime.of(14, 01), "observación6", "presente", true);
-    		Turno turno7 = new Turno(medico07, paciente7, LocalDate.of(2024, 02, 14), LocalTime.of(14, 01), "observación7", "presente", true);
-    		Turno turno8 = new Turno(medico08, paciente8, LocalDate.of(2024, 01, 14), LocalTime.of(14, 01), "observación8", "presente", true);
-    		Turno turno9 = new Turno(medico09, paciente9, LocalDate.of(2024, 04, 15), LocalTime.of(14, 01), "observación9", "ausente", true);
-    		Turno turno10 = new Turno(medico10, paciente10, LocalDate.of(2024, 01, 15), LocalTime.of(14, 01), "observación10", "presente", true);
-    		 */
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		turnoNegocio turnoNegocio = (turnoNegocio) appContext.getBean("beanTurnoNegocio");
     		
+    
+    		Turno turno1 = (Turno) appContext.getBean("beanTurno");
+    		turno1.setMedico(medico1);
+    		turno1.setPaciente(paciente1);
+    		turno1.setFecha(LocalDate.of(2024, 1, 11));
+    		turno1.setHora(LocalTime.of(14, 1));
+    		turno1.setObservacion("observación1");
+    		turno1.setEstado("presente");
+    		turno1.setActivo(true);
+
+    		Turno turno2 = (Turno) appContext.getBean("beanTurno");
+    		turno2.setMedico(medico2);
+    		turno2.setPaciente(paciente7);
+    		turno2.setFecha(LocalDate.of(2024, 1, 1));
+    		turno2.setHora(LocalTime.of(14, 1));
+    		turno2.setObservacion("observación2");
+    		turno2.setEstado("ausente");
+    		turno2.setActivo(true);
+
+    		Turno turno3 = (Turno) appContext.getBean("beanTurno");
+    		turno3.setMedico(medico3);
+    		turno3.setPaciente(paciente6);
+    		turno3.setFecha(LocalDate.of(2024, 2, 12));
+    		turno3.setHora(LocalTime.of(14, 1));
+    		turno3.setObservacion("observación3");
+    		turno3.setEstado("ausente");
+    		turno3.setActivo(true);
+
+    		Turno turno4 = (Turno) appContext.getBean("beanTurno");
+    		turno4.setMedico(medico4);
+    		turno4.setPaciente(paciente8);
+    		turno4.setFecha(LocalDate.of(2024, 1, 1));
+    		turno4.setHora(LocalTime.of(14, 1));
+    		turno4.setObservacion("observación4");
+    		turno4.setEstado("ausente");
+    		turno4.setActivo(true);
+
+    		Turno turno5 = (Turno) appContext.getBean("beanTurno");
+    		turno5.setMedico(medico5);
+    		turno5.setPaciente(paciente1);
+    		turno5.setFecha(LocalDate.of(2024, 2, 13));
+    		turno5.setHora(LocalTime.of(14, 1));
+    		turno5.setObservacion("observación5");
+    		turno5.setEstado("presente");
+    		turno5.setActivo(true);
+
+    		Turno turno6 = (Turno) appContext.getBean("beanTurno");
+    		turno6.setMedico(medico6);
+    		turno6.setPaciente(paciente6);
+    		turno6.setFecha(LocalDate.of(2024, 1, 13));
+    		turno6.setHora(LocalTime.of(14, 1));
+    		turno6.setObservacion("observación6");
+    		turno6.setEstado("presente");
+    		turno6.setActivo(true);
+
+    		Turno turno7 = (Turno) appContext.getBean("beanTurno");
+    		turno7.setMedico(medico7);
+    		turno7.setPaciente(paciente7);
+    		turno7.setFecha(LocalDate.of(2024, 2, 14));
+    		turno7.setHora(LocalTime.of(14, 1));
+    		turno7.setObservacion("observación7");
+    		turno7.setEstado("presente");
+    		turno7.setActivo(true);
+
+    		Turno turno8 = (Turno) appContext.getBean("beanTurno");
+    		turno8.setMedico(medico8);
+    		turno8.setPaciente(paciente8);
+    		turno8.setFecha(LocalDate.of(2024, 1, 14));
+    		turno8.setHora(LocalTime.of(14, 1));
+    		turno8.setObservacion("observación8");
+    		turno8.setEstado("presente");
+    		turno8.setActivo(true);
+
+    		Turno turno9 = (Turno) appContext.getBean("beanTurno");
+    		turno9.setMedico(medico9);
+    		turno9.setPaciente(paciente9);
+    		turno9.setFecha(LocalDate.of(2024, 4, 15));
+    		turno9.setHora(LocalTime.of(14, 1));
+    		turno9.setObservacion("observación9");
+    		turno9.setEstado("ausente");
+    		turno9.setActivo(true);
+
+    		Turno turno10 = (Turno) appContext.getBean("beanTurno");
+    		turno10.setMedico(medico10);
+    		turno10.setPaciente(paciente10);
+    		turno10.setFecha(LocalDate.of(2024, 1, 15));
+    		turno10.setHora(LocalTime.of(14, 1));
+    		turno10.setObservacion("observación10");
+    		turno10.setEstado("presente");
+    		turno10.setActivo(true);
+    
     		
-    		
-    		/*
-    		Turno turno1 = new Turno(medico01, paciente1, LocalDate.of(2024, 01, 11), "14:00", "observación1", "presente");
-    		Turno turno2 = new Turno(medico01, paciente2, LocalDate.of(2024, 01, 01), "14:00", "observación2", "ausente");
-    		Turno turno3 = new Turno(medico01, paciente3, LocalDate.of(2024, 02, 12), "14:00", "observación3", "ausente");
-    		Turno turno4 = new Turno(medico01, paciente4, LocalDate.of(2024, 01, 01), "14:00", "observación4", "ausente");
-    		Turno turno5 = new Turno(medico05, paciente5, LocalDate.of(2024, 02, 13), "14:00", "observación5", "presente");
-    		Turno turno6 = new Turno(medico06, paciente6, LocalDate.of(2024, 01, 13), "14:00", "observación6", "presente");
-    		Turno turno7 = new Turno(medico07, paciente7, LocalDate.of(2024, 02, 14), "14:00", "observación7", "presente");
-    		Turno turno8 = new Turno(medico08, paciente8, LocalDate.of(2024, 01, 14), "14:00", "observación8", "presente");
-    		Turno turno9 = new Turno(medico09, paciente9, LocalDate.of(2024, 04, 15), "14:00", "observación9", "ausente");
-    		Turno turno10 = new Turno(medico10, paciente10, LocalDate.of(2024, 01, 15), "14:00", "observación10", "presente");
-    		*/
-   
-    		
-    		
-    		
-    		
-    		System.out.println(new turnoNegocio().create(turno1));
-    		System.out.println(new turnoNegocio().create(turno2));
-    		System.out.println(new turnoNegocio().create(turno3));
-    		System.out.println(new turnoNegocio().create(turno4));
-    		/*
-    		System.out.println(new turnoNegocio().create(turno5));
-    		System.out.println(new turnoNegocio().create(turno6));
-    		System.out.println(new turnoNegocio().create(turno7));
-    		System.out.println(new turnoNegocio().create(turno8));
-    		System.out.println(new turnoNegocio().create(turno9));
-    		System.out.println(new turnoNegocio().create(turno10));
-    		*/
+    			
+    		System.out.println(turnoNegocio.create(turno1));
+    		System.out.println(turnoNegocio.create(turno2));
+    		System.out.println(turnoNegocio.create(turno3));
+    		System.out.println(turnoNegocio.create(turno4));
+    		System.out.println(turnoNegocio.create(turno5));
+    		System.out.println(turnoNegocio.create(turno6));
+    		System.out.println(turnoNegocio.create(turno7));
+    		System.out.println(turnoNegocio.create(turno8));
+    		System.out.println(turnoNegocio.create(turno9));
+    		System.out.println(turnoNegocio.create(turno10));
+
     		break;
     		
     	case 2:
-    		Usuario usuario11 = new Usuario("Gonzalo", "123", true);
-    		Especialidad especialidad4 = new Especialidad("Clinico", true);
-    		Medico medicoUpdate = new Medico(1234, "Gonzalo", "Alderete", "Masculino", "12/02/1996", "gonzalo@prueba.com", "falsa 111", "Pacheco", "11-12229", usuario11, especialidad4, true, "Lunes,Martes", "18:00-23:00");
-    		medicoUpdate.setLegajo(1);
-    		String updateMedcio = new medicoNegocio().update(medicoUpdate);
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		Usuario usuario11 = (Usuario) appContext.getBean("beanUsuario");
+    		usuario11.setUsuario("Gonzalo");
+    		usuario11.setContrasenia("123");
+    		usuario11.setActivo(true);
+    		
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		Especialidad especialidad4 = (Especialidad) appContext.getBean("beanEspecialidad");
+    		especialidad4.setNombre("Clínico");
+    		especialidad4.setActivo(true);
+    		
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		Medico medicoUpdate = (Medico) appContext.getBean("beanMedico");
+    		medicoUpdate.setNombre("Gonzalo");
+    		medicoUpdate.setApellido("Alderete");
+    		medicoUpdate.setGenero("Masculino");
+    		medicoUpdate.setNac("12/02/1996");
+    		medicoUpdate.setCorreo("gonzalo@prueba.com");
+    		medicoUpdate.setDireccion("falsa 111");
+    		medicoUpdate.setLocalidad("Pacheco");
+    		medicoUpdate.setTelefono("11-12229");
+    		medicoUpdate.setUsuario(usuario11);
+    		medicoUpdate.setEspecialidad(especialidad4);
+    		medicoUpdate.setActivo(true);
+    		medicoUpdate.setDiasAtencion("Lunes,Martes");
+    		medicoUpdate.setHorariosAtencion("18:00-23:00");
+    		medicoUpdate.setLegajo(1234);
+    		
+    		medicoNegocio medNeg = (medicoNegocio) appContext.getBean("beanMedicoNegocio");
+    		String updateMedcio = medNeg.update(medicoUpdate);
     		
     		System.out.println(updateMedcio);
     		break;
@@ -291,12 +556,12 @@ public class App
     		
     	case 3:
     		/*
-    		medicoController medicoDelete = new medicoController();
+    		medicoController medicoDelete = nsew medicoController();
     		medicoDelete.delete(9);
     		*/
-    		
-    		especialidadNegocio especialidadNeg = new especialidadNegocio();
-    		especialidadNeg.delete(5);
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		especialidadNegocio especialidadNegocio = (especialidadNegocio) appContext.getBean("beanEspecialidadNegocio");
+    		especialidadNegocio.delete(4);
     		
     		break;
     		
@@ -305,7 +570,10 @@ public class App
     	case 4:
     		System.out.println( "Listado de médicos: " );
 
-    		List<Medico> listMedicos = new medicoNegocio().listMedicos();
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		medicoNegocio listMedicoNegocio = (medicoNegocio) appContext.getBean("beanMedicoNegocio");
+    		
+    		List<Medico> listMedicos = listMedicoNegocio.listMedicos();
     		
     		for (Medico medico : listMedicos) {
     		    System.out.println(medico);
@@ -313,24 +581,42 @@ public class App
     		break;
     		
     	case 5:
-    		new medicoNegocio().listMedicsAscending();
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		medicoNegocio listMedicoNegocio2 = (medicoNegocio) appContext.getBean("beanMedicoNegocio");
+    		
+    		listMedicoNegocio2.listMedicsAscending();
     		break;
     		
     	case 6:
-    		new medicoNegocio().listMedicsDescending();
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		medicoNegocio listMedicoNegocio3 = (medicoNegocio) appContext.getBean("beanMedicoNegocio");
+    		
+    		listMedicoNegocio3.listMedicsDescending();
     		break;
     		
     	case 7:
-			new turnoNegocio().listTurnosInnerJoin();
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		turnoNegocio listTurnoNegocio4 = (turnoNegocio) appContext.getBean("beanTurnoNegocio");
+    		
+    		listTurnoNegocio4.listTurnosInnerJoin();
     		break;
     	case 8:
-    		new medicoNegocio().listMedicsIds();
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		medicoNegocio listMedicoNegocio5 = (medicoNegocio) appContext.getBean("beanMedicoNegocio");
+    		
+    		listMedicoNegocio5.listMedicsIds();
     		break;
     	case 9:
-    		new medicoNegocio().listMedicWithHighestId();
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		medicoNegocio listMedicoNegocio6 = (medicoNegocio) appContext.getBean("beanMedicoNegocio");
+    		
+    		listMedicoNegocio6.listMedicWithHighestId();
     		break;
     	case 10:
-        	new turnoNegocio().listTurnStatusPercentages();
+    		appContext = new ClassPathXmlApplicationContext("UTN/TP4_GRUPO_15/resources/beans.xml");
+    		turnoNegocio listTurnoNegocio2 = (turnoNegocio) appContext.getBean("beanTurnoNegocio");
+    		
+    		listTurnoNegocio2.listTurnStatusPercentages();
     		break;
     		
     	case 11:
